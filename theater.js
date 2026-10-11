@@ -86,6 +86,7 @@
     cue.birdNotes=notes.filter(n=>n.part==='bird');
     cue.answers=[];
     for(const n of cue.birdNotes) {
+      if(n.role==='call'){n.answer=0;continue;}   // contact calls and cadence tweets are not duel rounds
       const last=cue.answers.at(-1);
       if(!last||n.t-last.until>.35)cue.answers.push({t:n.t,until:n.t+n.d,round:cue.answers.length+1});
       else last.until=Math.max(last.until,n.t+n.d);
@@ -98,6 +99,7 @@
     cue.mainNotes=notes.filter(n=>n.part==='rh'||n.part==='solo');
     // Compile each trapped figure once. A wrong D natural still counts as an
     // attempted D♯ via `want`; count only pairs whose second gate has finished.
+    cue.accents=cue.mainNotes.filter((n,i,a)=>i===0||n.t-a[i-1].t>=.28||n.v>=.85).map(n=>n.t);
     cue.loops=events.filter(e=>e.type==='mistake'&&e.kind==='stuck').map(event=>{
       const ns=cue.mainNotes.slice(lowerBound(cue.mainNotes,event.t));
       const pairs=[];let until=raw.duration;
@@ -181,9 +183,17 @@
     const forte=cue.kind==='concert'&&activeNotes.some(n=>n.v>=.65);
     const portrait={x:0,y:0,angle:0,scaleX:1,scaleY:1};
     if(!reduced&&!pause&&!end) {
-      portrait.y=-Math.sin(clamp(noteAge/.18,0,1)*Math.PI)*(forte?6:4);
-      portrait.angle=Math.sin(t*2.2)*(forte?4:2);
-      if(loop&&latest)portrait.angle=((latest.want??latest.p)===76?-1:1)*6*Math.cos(clamp(noteAge/.26,0,1)*Math.PI*.45);
+      // Continuous, musical motion: slow sway + breathing, and one soft nod per phrase start / accent.
+      // (A hop on every note made the portrait twitch ~8 times a second in fast passages, which read as stutter.)
+      const busy=density>0;
+      portrait.angle=Math.sin(motionTime*1.5)*(forte?3:busy?2:1);
+      portrait.y=Math.sin(motionTime*3)*(forte?2:1.2);
+      const accent=cue.accents[lowerBound(cue.accents,motionTime+1e-8,x=>x)-1];
+      if(accent!==undefined&&motionTime-accent<.45){const k=Math.sin((motionTime-accent)/.45*Math.PI);portrait.y-=k*(forte?7:5);portrait.angle+=k*1.5;}
+      if(segment&&segment.pairs.length){   // stuck on E–D♯: rock smoothly in time with the pairs
+        const ps=segment.pairs,period=ps.length>1?(ps.at(-1).start-ps[0].start)/(ps.length-1):.3;
+        portrait.angle=Math.sin((motionTime-segment.event.t)/Math.max(.12,period)*Math.PI*2)*6;
+      }
       if(reaction?.kind==='wrong'&&t-reaction.t<.12){portrait.x=Math.sin((t-reaction.t)*150)*7;portrait.angle+=portrait.x*.5;}
       if(reaction?.type==='restart')portrait.y=-Math.sin(clamp((t-reaction.t)/.65,0,1)*Math.PI)*20;
       if(reaction?.kind==='slide'||activeNotes.some(n=>n.part==='solo'&&!n.ok))portrait.angle+=Math.sin(t*18)*3;
@@ -204,14 +214,17 @@
     const tap=cue.catNotes[lowerBound(cue.catNotes,motionTime+1e-8)-1];
     cat.tap=tap&&motionTime-tap.t<.12?{p:tap.p,age:motionTime-tap.t,lift:reduced?0:Math.sin((motionTime-tap.t)/.12*Math.PI)*14}:null;
     // During repeated taps stay at the sounding key, even without a new step cue.
-    if(cat.visible&&cat.mode!=='enter'&&tap&&motionTime<tap.t+tap.d&&tap.t>=cat.event.t) {
-      const pitch=cat.event.t===tap.t?cat.event.p:tap.p;cat.x=pitchX(cue,pitch);cat.tap&&(cat.tap.p=pitch);
+    if(cat.visible&&cat.mode!=='enter'&&tap&&tap.t>=cat.event.t&&(motionTime<tap.t+tap.d||motionTime>=cat.event.t+(cat.event.d||0))) {   // on a sounding key, or parked after a step
+      let i=lowerBound(cue.catNotes,motionTime+1e-8)-1;while(i>=0&&cue.catNotes[i].t>tap.t-.03)i--;   // previous paw press, not the same cluster
+      const prev=cue.catNotes[i],pitch=cat.event.t===tap.t?cat.event.p:tap.p,to=pitchX(cue,pitch);
+      const from=prev&&prev.t>=cat.event.t?pitchX(cue,prev.p):cat.x;
+      cat.x=mix(from,to,ease(clamp((motionTime-tap.t)/.05,0,1)));cat.tap&&(cat.tap.p=pitch);
     }
     const answer=cue.answers.filter(a=>a.t<=motionTime).at(-1)||null;
     bird.round=answer?.round??0;
     bird.answer=answer&&motionTime<answer.until?answer:null;
     const birdGlyphs=cue.birdNotes.filter(n=>n.t<=motionTime&&motionTime<n.t+.85).map(n=>({t:n.t,age:motionTime-n.t,
-      big:n.answer===cue.answers.length&&cue.answers.at(-1).until-cue.answers.at(-1).t>1}));
+      big:!!cue.answers.length&&n.answer===cue.answers.length&&cue.answers.at(-1).until-cue.answers.at(-1).t>1}));
     if(cue.kind==='accident') {
       const finale=cue.endings.find(e=>e.kind==='accident');
       if(finale&&t>=finale.t-.7) {
@@ -265,7 +278,7 @@
   function text(s,x,y,size,color=C.cream,font='system-ui') {ctx.font=`${size}px ${font}`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=color;ctx.fillText(s,x,y);}
   // Static stage art is painted once per canvas size into offscreen layers; each frame only blits them.
   // (Full-canvas gradients and curtain curves redrawn every frame were the main raster cost on phones.)
-  let layerKey='',layerBase=null,layerFront=null,layerSpot=[null,null];
+  let layerKey='',layerBase=null,layerFront=null,layerSpot=[null,null],layerAll=[null,null];
   function layer(draw) {
     const c=root.document.createElement('canvas');c.width=canvas.width;c.height=canvas.height;
     const g=c.getContext('2d');g.setTransform(canvas.width/W,0,0,canvas.height/H,0,0);
@@ -290,11 +303,13 @@
   function buildLayers() {
     const key=`${canvas.width}x${canvas.height}x${H.toFixed(2)}`;if(key===layerKey)return;layerKey=key;
     layerBase=layer(paintBase);layerSpot=[layer(()=>paintSpot(false)),layer(()=>paintSpot(true))];layerFront=layer(paintFront);
+    layerAll=[false,true].map(pause=>layer(()=>{paintBase();paintSpot(pause);paintFront();}));
   }
   function blit(c,alpha=1) {ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=alpha;ctx.drawImage(c,0,0);ctx.restore();}
   function background(state) {
     if(layersOK)try{if(typeof ctx.drawImage!=='function')throw 0;buildLayers();}catch(_){layersOK=false;}   // no offscreen canvas: paint directly
     if(!layersOK){paintBase();if(state.spotlight>0){ctx.save();ctx.globalAlpha=state.spotlight;paintSpot(state.pause);ctx.restore();}paintFront();return;}
+    if(state.spotlight>=.999)return blit(layerAll[state.pause?1:0]);
     blit(layerBase);
     if(state.spotlight>0)blit(layerSpot[state.pause?1:0],state.spotlight);
     blit(layerFront);
@@ -567,7 +582,7 @@
   }
   function clockText(t){return `${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,'0')}`;}
   function resize() {
-    const rect=canvas.getBoundingClientRect(),dpr=Math.min(root.devicePixelRatio||1,dprCap),width=Math.max(1,Math.round(rect.width*dpr)),height=Math.max(1,Math.round(rect.height*dpr));
+    const rect=canvas.getBoundingClientRect(),dpr=Math.min(root.devicePixelRatio||1,dprCap)*quality,width=Math.max(1,Math.round(rect.width*dpr)),height=Math.max(1,Math.round(rect.height*dpr));
     H=W*rect.height/Math.max(1,rect.width);pixelUnit=W/Math.max(1,rect.width);
     if(canvas.width!==width||canvas.height!==height){canvas.width=width;canvas.height=height;ctx.setTransform(width/W,0,0,height/H,0,0);}
     if(guestCanvas.width!==width||guestCanvas.height!==height){guestCanvas.width=width;guestCanvas.height=height;guestCtx.setTransform(width/W,0,0,height/H,0,0);}
@@ -599,12 +614,14 @@
     stopSource();anchor=audio.currentTime;perfAnchor=nowMs();
     if(buffer&&offset<buffer.duration){source=audio.createBufferSource();source.buffer=buffer;source.playbackRate.value=rate;source.connect(audio.destination);source.start(0,offset);}
   }
-  let dprCap=2,frameAvg=16,lastFrame=0,slowFrames=0;
+  let dprCap=2,frameAvg=16,lastFrame=0,slowFrames=0,quality=1,lastDraw=0;
+  const frameLog=[];   // [wall ms, clip t] of the last frames drawn, for diagnosing judder
   function tick() {
     if(!playing)return;
-    const now=nowMs();if(lastFrame){frameAvg=frameAvg*.9+(now-lastFrame)*.1;slowFrames=frameAvg>26?slowFrames+1:0;}lastFrame=now;
+    const now=nowMs();
+    lastDraw=now;if(lastFrame){frameAvg=frameAvg*.9+(now-lastFrame)*.1;slowFrames=frameAvg>26?slowFrames+1:0;}lastFrame=now;
     if(slowFrames>45&&dprCap>1){dprCap=dprCap>1.5?1.5:1;slowFrames=0;resize();}
-    const t=currentTime();render(t);
+    const t=currentTime();render(t);frameLog.push([now,t]);if(frameLog.length>240)frameLog.shift();
     if(t>=cue.duration){pause();return;}raf=root.requestAnimationFrame(tick);
   }
   async function play() {
@@ -691,7 +708,6 @@
     root.document.documentElement.lang=lang==='zh'?'zh-CN':'en';root.document.title=tr('翻车剧场','Flop Theater');$('title').textContent=tr('翻车剧场','Flop Theater');
     $('lang-zh').setAttribute('aria-pressed',String(lang==='zh'));$('lang-en').setAttribute('aria-pressed',String(lang==='en'));makeCards();
     $('maestros').setAttribute('aria-label',tr('选择演出','Choose a performance'));$('stage').setAttribute('aria-label',tr('演出舞台','Performance stage'));$('seek').setAttribute('aria-label',tr('演出进度','Performance position'));
-    $('slow').textContent='×0.5';$('slow').setAttribute('aria-label',tr('半速播放','Half-speed playback'));
     txt($('loop-label'),tr('原地打转','STUCK ON REPEAT'));
     $('legend-rh').textContent=tr('旋律','Melody');$('legend-lh').textContent=tr('左手 / 准音','Bass / in tune');$('legend-wrong').textContent=tr('错音','Wrong notes');$('legend-guest').textContent=tr('不速之客','Unexpected guest');
     const m=MAESTROS.find(m=>m.id===cue?.musician);
@@ -705,12 +721,11 @@
   function showPlaybackError(err){$('status').hidden=false;$('status').textContent=tr('播放失败：','Playback failed: ')+err.message;}
   $('play').addEventListener('click',()=>playing?pause():play().catch(showPlaybackError));
   $('seek').addEventListener('input',()=>seek(Number($('seek').value)));
-  $('slow').addEventListener('click',()=>{offset=currentTime();rate=rate===1?.5:1;$('slow').setAttribute('aria-pressed',String(rate===.5));if(playing)startSource();});
   for(const l of ['zh','en'])$(`lang-${l}`).addEventListener('click',()=>{lang=l;updateCopy();});
   root.addEventListener('resize',resize);motion?.addEventListener?.('change',()=>render(currentTime()));
   if(root.ResizeObserver)new root.ResizeObserver(resize).observe(canvas);
   root.document.fonts?.ready.then(()=>{textWidths.clear();warmText();if(cue)render(currentTime());});
-  root.theater={load,play,pause,seek,render};
+  root.theater={load,play,pause,seek,render,frames:()=>frameLog.slice()};
   async function fromHash() {
     const params=new URLSearchParams(root.location.hash.slice(1)),id=params.get('clip')||'beethoven-fur-elise-accident';
     try{const c=await load(id);if(c){const t=Number(params.get('t')||0);seek(finite(t)?t:0);}}catch(_){/* load reports the concrete error in the status line */}

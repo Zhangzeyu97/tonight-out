@@ -81,7 +81,7 @@
     "audio_license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
     "attribution": "Antonio Vivaldi — Spring, movement I; score typeset by Anonymous, Mutopia-2010/02/08-301; pilot adaptation by Singer Game contributors (2026).",
     "share_alike": "ALL vivaldi-spring-*.mp3 files, their cue JSON, performance plans and the Spring portions of the timeline are released under CC BY-SA 3.0. Adaptations must retain attribution, indicate changes, and be distributed under CC BY-SA 3.0 or a license permitted by its ShareAlike terms.",
-    "changes": "Tempo quarter=104, expressive articulation/dynamics, score-indicated trills and mordents realized, existing score cello retained. Concert shortens birdsong repetitions. Accident abbreviates opening/closing ritornelli and elaborates indicated ornaments into a piccolo duet. Wreck changes solo timing and pitch; orchestra retains score pitches.",
+    "changes": "Tempo quarter=104, expressive articulation/dynamics, score-indicated trills and mordents realized, existing score cello retained. Concert shortens birdsong repetitions. Accident abbreviates opening/closing ritornelli and pairs the score violin gestures with an original NumPy songbird whistle synthesis: curious contact calls, curved answers about two octaves higher, FM warbles, accelerating rising AM trills, cadence tweets and a flight call. Its original violin/orchestra notes and timing are preserved. Wreck changes solo timing and pitch; orchestra retains score pitches.",
     "filename_correction": "spring-score-1.mid is the Largo (3/4, quarter=50, C-sharp minor); spring-score.mid is the Allegro (4/4, quarter=115 in source, E major), verified against spring1.ly."
   },
   "soundfont": {
@@ -95,9 +95,16 @@
       "40": "Violin",
       "41": "Viola",
       "42": "Cello",
-      "48": "String Ensemble 1",
-      "72": "Piccolo"
+      "48": "String Ensemble 1"
     }
+  },
+  "bird": {
+    "clip": "vivaldi-spring-accident",
+    "creator": "Singer Game contributors (2026)",
+    "source": "Original NumPy synthesis; no recordings, Bird Tweet or piccolo preset.",
+    "synthesis": "Nearly pure whistle, weak second/third harmonics (-18/-30 dB), rapid sweeps, 10–20 Hz FM, accelerating 19–29 Hz AM trills, quiet band-passed breath, 1–4 ms attacks and exponential decay.",
+    "placement": "Slightly right (pan +0.28); 1.8% early reflection. Peak -6 dB relative to the geometric mean of the two isolated duel violin gesture peaks, before shared mastering (within -4 to -8 dB of each gesture).",
+    "license": "CC BY-SA 3.0 Unported as part of the Spring adaptation"
   },
   "audience": "Laugh, gasp and cheer events are theater reactions only; no recorded/synthetic audience effects are mixed into MP3s.",
   "software": "New pilot scripts: MIT. Score-derived Spring data and audio: CC BY-SA 3.0, not CC0."
