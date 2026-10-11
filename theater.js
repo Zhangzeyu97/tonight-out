@@ -736,7 +736,8 @@
   function resize() {
     if(destroyed)return;
     const rect=options.fixedSize||canvas.getBoundingClientRect(),dpr=(options.fixedSize?1:Math.min(root.devicePixelRatio||1,dprCap)*quality),width=Math.max(1,Math.round(rect.width*dpr)),height=Math.max(1,Math.round(rect.height*dpr));
-    H=W*rect.height/Math.max(1,rect.width);pixelUnit=W/Math.max(1,rect.width);
+    // Canvas pixels remain measured at physical size; DOM anchors use logical CSS pixels.
+    H=W*rect.height/Math.max(1,rect.width);pixelUnit=W/Math.max(1,rect.width/(options.coordinateScale?.()||1));
     if(canvas.width!==width||canvas.height!==height){canvas.width=width;canvas.height=height;ctx.setTransform(width/W,0,0,height/H,0,0);}
     if(guestCanvas.width!==width||guestCanvas.height!==height){guestCanvas.width=width;guestCanvas.height=height;guestCtx.setTransform(width/W,0,0,height/H,0,0);}
     if(cue){warmText();warmSprites();css($('speech'),'marginTop',`${(70-H*(H<750?.07:.09))/pixelUnit}px`);render(lastState?.t??offset);}
@@ -862,7 +863,7 @@
   root.addEventListener('resize',resize);motion?.addEventListener?.('change',motionChange);
   const observer=root.ResizeObserver?new root.ResizeObserver(resize):null;observer?.observe(canvas);
   root.document.fonts?.ready.then(()=>{if(destroyed)return;textWidths.clear();warmText();if(cue)render(currentTime());});
-  const api={load,play,pause,seek,render,compose,audioData:()=>({context:context(),buffer}),get lang(){return lang;},frames:()=>frameLog.slice(),
+  const api={load,play,pause,seek,render,compose,audioData:()=>({context:context(),buffer,muted:options.audio?.muted?.()??muted}),get lang(){return lang;},frames:()=>frameLog.slice(),
     on(name,fn){if(!listeners.has(name))listeners.set(name,new Set());listeners.get(name).add(fn);return ()=>listeners.get(name)?.delete(fn);},
     setLang(l){lang=l==='en'?'en':'zh';updateCopy();},
     setMuted(b){const t=currentTime();muted=!!b;if(playing){offset=t;startSource();}},
