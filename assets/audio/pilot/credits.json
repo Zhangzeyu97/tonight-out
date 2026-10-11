@@ -1,0 +1,104 @@
+{
+  "title": "Classical-music theater: Beethoven / Vivaldi audio pilot",
+  "beethoven": {
+    "composer": "Ludwig van Beethoven",
+    "work": "Für Elise, WoO 59",
+    "score": "Mutopia-2015/08/18-931",
+    "typesetter": "Stelios Samelis",
+    "score_license": "Public Domain",
+    "source": {
+      "file": "_downloads/audio/sources/fur_Elise_WoO59.mid",
+      "sha256": "1c12c21c7bbf4cf163896732672648a69d497636059837abd153c71abe50215a",
+      "ticks_per_quarter": 384,
+      "metadata": [
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('time_signature', numerator=3, denominator=8, clocks_per_click=18, notated_32nd_notes_per_beat=8, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('set_tempo', tempo=833333, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Am', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Am', time=0)"
+        }
+      ],
+      "source_end_beat": 156.5000000000002
+    },
+    "audio_license": "CC0-1.0",
+    "audio_license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": "Score-derived performance, expanded repeats, tempo eighth=126, dynamics, rubato, baked harmony sustain; comic edits for wreck/accident."
+  },
+  "vivaldi": {
+    "composer": "Antonio Vivaldi",
+    "work": "La Primavera / Spring, Op. 8 No. 1, RV 269, movement I Allegro",
+    "score": "Mutopia-2010/02/08-301",
+    "typesetter": "Anonymous",
+    "copyright": "Copyright © 2010 Anonymous",
+    "score_license": "CC BY-SA 3.0 Unported",
+    "source": {
+      "file": "_downloads/audio/sources/spring/spring-score.mid",
+      "sha256": "9f9eaaaac0f1a6b0e1a9af86ff2ff65a0ff786dd4fa8d8b8eda19f8d564e35e0",
+      "ticks_per_quarter": 384,
+      "metadata": [
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('time_signature', numerator=4, denominator=4, clocks_per_click=18, notated_32nd_notes_per_beat=8, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('set_tempo', tempo=521739, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='E', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='E', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='E', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='E', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='E', time=0)"
+        }
+      ],
+      "source_end_beat": 328.5
+    },
+    "audio_license": "CC BY-SA 3.0 Unported",
+    "audio_license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "attribution": "Antonio Vivaldi — Spring, movement I; score typeset by Anonymous, Mutopia-2010/02/08-301; pilot adaptation by Singer Game contributors (2026).",
+    "share_alike": "ALL vivaldi-spring-*.mp3 files, their cue JSON, performance plans and the Spring portions of the timeline are released under CC BY-SA 3.0. Adaptations must retain attribution, indicate changes, and be distributed under CC BY-SA 3.0 or a license permitted by its ShareAlike terms.",
+    "changes": "Tempo quarter=104, expressive articulation/dynamics, score-indicated trills and mordents realized, existing score cello retained. Concert shortens birdsong repetitions. Accident abbreviates opening/closing ritornelli and elaborates indicated ornaments into a piccolo duet. Wreck changes solo timing and pitch; orchestra retains score pitches.",
+    "filename_correction": "spring-score-1.mid is the Largo (3/4, quarter=50, C-sharp minor); spring-score.mid is the Allegro (4/4, quarter=115 in source, E major), verified against spring1.ly."
+  },
+  "soundfont": {
+    "file": "_downloads/audio/MuseScore_General.sf2",
+    "sha256": "ee51d2c4b1525e70f19a45909c4fd7a2e26d91d115fa89dbf5a6bc413d8b9bf3",
+    "name": "MuseScore_General 0.2",
+    "license": "MIT",
+    "complete_notices": "# MuseScore_General.sf2\n---\n\nCurrent version: 0.2  13th May 2020\n\nThis is a scaled-down version of **MuseScore_General-HQ.sf2** that replaces some of the larger instruments to save memory and CPU on older PCs. This SoundFont is currently a work-in-progress. Detailed information on presets and sample sources used can be found in \"MuseScore_General_Sample_Sources.csv\". All instruments without attribution are still using samples from FluidR3Mono.\n\nFluidR3 (original version) by Frank Wen Copyright (c) 2000-02\n\nMono conversion (FluidR3Mono) by Michael Cowgill Copyright (c) 2014-17\n\nAdaptation for MuseScore_General.sf2 by S. Christian Collins Copyright (c) 2018-19\n\nTemple Blocks instrument provided by Ethan Winer Copyright (c) 2002\n\nDrumline Cymbals provided by Michael Schorsch Copyright (c) 2016\n\nMuseScore_General.sf2 is shared under the MIT license as described in COPYING, as was FluidR3Mono and FluidR3 before it.\n\nThe COPYING and README files from the original FluidR3GM file are now displayed here for reference.\n\nThe acknowledgements and copyright notices above must be included in any derivative work.\n\n\nREADME\n---\n\nFluid (R3) SoundFont\n\nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nI hereby release Fluid under the MIT license, as described in COPYING.\n\n\nThanks to Toby Smithe for helping to get Fluid included in Ubuntu.\n\nThis package, of course, is the original Release 3 of Fluid.  \n\n\nFluid was constructed in part from samples found in the public domain that I\nedited/cleaned/remixed/programmed and largely from recordings of my own and\nin conjunction with the people below who helped along the way:\n\nSuren M. Seron\nScott Hanan\nSteve Aupperle\nChris Gillman\nAlex Taubr\nChris Prola\nAndrew Klenk\nWinfried Hubbe \nDylan\nTim\nGort\nUros Katic \nEthan Winer (http://www.ethanwiner.com) \n\n\nIt's obviously been a few years since the project, but its nice to see that\npeople are still enjoying my work and getting good use out of it.  As always,\nI'd like to hear some work done with Fluid so email me, or just email me to\nsay hello and tell me what is going on in the computer musician world.\nWho knows, maybe I'll kick start this project again? ;)\n\n\nCOPYING\n---\n\nMono version:  Copyright (c) 2014-16 Michael Cowgill \nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the \"Software\"), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\n",
+    "presets_0_based": {
+      "0": "Grand Piano",
+      "40": "Violin",
+      "41": "Viola",
+      "42": "Cello",
+      "48": "String Ensemble 1",
+      "72": "Piccolo"
+    }
+  },
+  "audience": "Laugh, gasp and cheer events are theater reactions only; no recorded/synthetic audience effects are mixed into MP3s.",
+  "software": "New pilot scripts: MIT. Score-derived Spring data and audio: CC BY-SA 3.0, not CC0."
+}
