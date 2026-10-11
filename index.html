@@ -440,7 +440,8 @@ html[lang=en] .cover-preview{--sound-pill:"🔊 Tap for sound"}
     <button type="button" class="cover-preview" id="cover-preview" data-i18n-aria="cover.preview" aria-label="翻车现场"></button>
     <div class="stage cast-stage"><div class="cast" id="cast"></div></div>
     <div class="lineup-bar"><span data-i18n="lineup.hint"></span><button type="button" class="ghost" id="btn-shuffle" data-i18n="lineup.shuffle"></button></div>
-    <button type="button" class="daily" id="daily"></button>
+    <!-- daily game and flop collection are parked (hidden) until there are players; the code still records progress -->
+    <button type="button" class="daily" id="daily" hidden></button>
     <h2 class="sect" data-i18n="menu.choose"></h2>
     <div class="levels">
       <button class="level" type="button" data-level="rookie">
@@ -456,9 +457,9 @@ html[lang=en] .cover-preview{--sound-pill:"🔊 Tap for sound"}
         <span class="ldesc" data-i18n="reader.desc"></span>
       </button>
     </div>
-    <h2 class="sect" data-i18n="hall.title"></h2>
+    <div class="hall-wrap" hidden><h2 class="sect" data-i18n="hall.title"></h2>
     <p class="hall-hint" id="hall-hint"></p>
-    <div class="hall" id="hall"></div>
+    <div class="hall" id="hall"></div></div>
     <a class="theater-link" href="theater.html" data-i18n="hall.theater"></a>
     <h2 class="sect" data-i18n="rules.button"></h2>
     <ol class="rules-c">
@@ -2678,7 +2679,7 @@ root.GameTheater=function({sound,language,onSeen}){
   };
   const Theater=GameTheater({sound:Sound,language:()=>lang,onSeen(c){
     if(!['wreck','accident'].includes(c.kind))return;const have=flops(),key=`${c.musician}:${c.piece}:${c.kind}`;
-    if(!have.has(key)){have.add(key);store.set(KEY_FLOPS,[...have]);toast('toast.newFlop',{name:lname(c.musician)});renderHall();}
+    if(!have.has(key)){have.add(key);store.set(KEY_FLOPS,[...have]);if(!$('.hall-wrap').hidden)toast('toast.newFlop',{name:lname(c.musician)});renderHall();}
   }});
   const manifestReady=fetch('assets/cues/index.json').then(r=>r.ok?r.json():{clips:[]}).then(m=>{clipIndex=(m.clips||[]).filter(c=>c.kind!=='full');Theater.setClips(clipIndex);renderHall();}).catch(()=>{});
   Theater.mountCover($('#cover-preview'));
