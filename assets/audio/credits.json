@@ -1,0 +1,129 @@
+{
+  "soundfont": {
+    "name": "MuseScore_General.sf2",
+    "version": "0.2, 13 May 2020",
+    "license": "MIT",
+    "file": "_downloads/audio/MuseScore_General.sf2",
+    "licenseFile": "_downloads/audio/MuseScore_General_License.md",
+    "attribution": "FluidR3: Frank Wen; FluidR3Mono: Michael Cowgill; MuseScore_General adaptation: S. Christian Collins; Temple Blocks: Ethan Winer; Drumline Cymbals: Michael Schorsch. Full notices retained in license file.",
+    "sha256": "ee51d2c4b1525e70f19a45909c4fd7a2e26d91d115fa89dbf5a6bc413d8b9bf3",
+    "presets": {
+      "0": "Grand Piano",
+      "9": "Glockenspiel",
+      "10": "Music Box",
+      "19": "Church Organ",
+      "40": "Violin",
+      "41": "Viola",
+      "42": "Cello",
+      "43": "Contrabass",
+      "45": "Strings Pizzicato",
+      "46": "Harp",
+      "47": "Timpani",
+      "56": "Trumpet",
+      "57": "Trombone",
+      "58": "Tuba",
+      "60": "French Horns",
+      "68": "Oboe",
+      "70": "Bassoon"
+    }
+  },
+  "compositions": [
+    {
+      "musician": "beethoven",
+      "piece": "fur-elise",
+      "title": "Für Elise, WoO 59",
+      "composer": "Ludwig van Beethoven",
+      "compositionStatus": "Historical public-domain composition; no modern recording used.",
+      "midiSource": "Original offline knowledge transcription, corrected using user-supplied contours; no score or MIDI downloaded.",
+      "midiLicense": "CC0-1.0",
+      "noteData": "tools/audio/excerpts.py",
+      "publicDomainScoreReference": "https://imslp.org/wiki/F%C3%BCr_Elise%2C_WoO_59_(Beethoven%2C_Ludwig_van)",
+      "referenceAccessed": false
+    },
+    {
+      "musician": "mozart",
+      "piece": "nachtmusik",
+      "title": "Eine kleine Nachtmusik, K.525, I",
+      "composer": "Wolfgang Amadeus Mozart",
+      "compositionStatus": "Historical public-domain composition; no modern recording used.",
+      "midiSource": "Original offline knowledge transcription, corrected using user-supplied contours; no score or MIDI downloaded.",
+      "midiLicense": "CC0-1.0",
+      "noteData": "tools/audio/excerpts.py",
+      "publicDomainScoreReference": "https://imslp.org/wiki/Eine_kleine_Nachtmusik%2C_K.525_(Mozart%2C_Wolfgang_Amadeus)",
+      "referenceAccessed": false
+    },
+    {
+      "musician": "bach",
+      "piece": "toccata",
+      "title": "Toccata and Fugue in D minor, BWV 565",
+      "composer": "Traditionally attributed to Johann Sebastian Bach",
+      "compositionStatus": "Historical public-domain composition; no modern recording used.",
+      "midiSource": "Original offline knowledge transcription, corrected using user-supplied contours; no score or MIDI downloaded.",
+      "midiLicense": "CC0-1.0",
+      "noteData": "tools/audio/excerpts.py",
+      "publicDomainScoreReference": "https://imslp.org/wiki/Toccata_and_Fugue_in_D_minor%2C_BWV_565_(Bach%2C_Johann_Sebastian)",
+      "referenceAccessed": false
+    },
+    {
+      "musician": "chopin",
+      "piece": "nocturne",
+      "title": "Nocturne in E-flat major, Op.9 No.2",
+      "composer": "Frédéric Chopin",
+      "compositionStatus": "Historical public-domain composition; no modern recording used.",
+      "midiSource": "Original offline knowledge transcription, corrected using user-supplied contours; no score or MIDI downloaded.",
+      "midiLicense": "CC0-1.0",
+      "noteData": "tools/audio/excerpts.py",
+      "publicDomainScoreReference": "https://imslp.org/wiki/Nocturnes%2C_Op.9_(Chopin%2C_Fr%C3%A9d%C3%A9ric)",
+      "referenceAccessed": false
+    },
+    {
+      "musician": "vivaldi",
+      "piece": "spring",
+      "title": "The Four Seasons: Spring, RV 269, I",
+      "composer": "Antonio Vivaldi",
+      "compositionStatus": "Historical public-domain composition; no modern recording used.",
+      "midiSource": "Original offline knowledge transcription, corrected using user-supplied contours; no score or MIDI downloaded.",
+      "midiLicense": "CC0-1.0",
+      "noteData": "tools/audio/excerpts.py",
+      "publicDomainScoreReference": "https://imslp.org/wiki/Violin_Concerto_in_E_major%2C_RV_269_(Vivaldi%2C_Antonio)",
+      "referenceAccessed": false
+    },
+    {
+      "musician": "tchaikovsky",
+      "piece": "swan-lake",
+      "title": "Swan Lake, Op.20, Act II: Scene",
+      "composer": "Pyotr Ilyich Tchaikovsky",
+      "compositionStatus": "Historical public-domain composition; no modern recording used.",
+      "midiSource": "Original offline knowledge transcription, corrected using user-supplied contours; no score or MIDI downloaded.",
+      "midiLicense": "CC0-1.0",
+      "noteData": "tools/audio/excerpts.py",
+      "publicDomainScoreReference": "https://imslp.org/wiki/Swan_Lake%2C_Op.20_(Tchaikovsky%2C_Pyotr)",
+      "referenceAccessed": false
+    }
+  ],
+  "rendering": {
+    "renderer": "tinysoundfont offline MIDI and original numpy synthesis; stereo 44.1 kHz",
+    "processing": "Seeded convolution; 20 ms fade-in; two-pass loudnorm, adaptive compression where needed and encoded gain correction; music -16 LUFS, SFX -18 LUFS; LAME -V5 -b96 -F; decoded MP3 true peaks <= -1 dBTP.",
+    "arrangementLicense": "CC0-1.0",
+    "scriptLicense": "MIT (tools/audio/LICENSE)"
+  },
+  "effects": {
+    "source": "Original synthesized effects, including synthetic claps without voices; no external recordings or branded ringtones.",
+    "fanfare": "Original brass motif composed for this project.",
+    "sadTrombone": "Generic descending chromatic wah-wah trope with last-note wobble.",
+    "license": "CC0-1.0"
+  },
+  "transcriptionDecisions": [
+    "Mozart: agree with supplied bars 1–4, including G-D-G-B in bar 2 and C-A-F#-A in bar 4. All five string desks follow the line in unison/octaves; cello/bass are an octave below the lead. 132 rather than 138 bpm permits an 8-second clip with the bar-4 rest and a short release.",
+    "Swan Lake: agree that the opening is F#5 dropping to B4. At quarter=66 the complete requested contour exceeds 10 seconds; the delivered perfect stops at the held F#5 after the first two bars. It contains eight melody attacks, so there are no ninth–twelfth notes to report. Full corrected contour is retained in excerpts.py.",
+    "Vivaldi: agree with the supplied pitch contour and implement the soft echo. The excerpt ends on B4, a ritornello phrase division on the dominant, rather than inventing a tonic cadence.",
+    "Chopin: agree with Bb4–G5–F5–G5–F5–Eb5–Bb4, then G5–C5–C6–G5–Bb5–Ab5; remove the erroneous Eb-D-Eb-F passage. F-G-F uses eighth notes within the 12/8 bar. The 9-second excerpt ends at the opening two-bar boundary on Ab5, before the next G5; this is an excerpt boundary, not a final tonic cadence.",
+    "Beethoven and Bach: retain the previous opening note sequences. Bach fermatas are timed for the excerpt; accompaniment remains an original reduction, not a critical-edition reproduction.",
+    "Offline only: pitches were rechecked against internal musical knowledge and the supplied corrections. No physical/public-domain score was available locally. Exact Chopin ornamental rhythm and Spring rhythm/articulation remain unverified against a score; perfect denotes the clean arrangement, not independently certified score accuracy."
+  ],
+  "limitations": [
+    "No independently consulted score or human listening review. See transcriptionDecisions for excerpt boundaries and rhythm uncertainty.",
+    "GM presets and synthetic gestures approximate broken strings, bow hair and reed squawks.",
+    "BWV 565 is traditionally attributed to Bach; historical authorship is disputed."
+  ]
+}

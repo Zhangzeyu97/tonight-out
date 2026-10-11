@@ -1,0 +1,56 @@
+[
+  {
+    "id": "beethoven",
+    "file": "beethoven.webp",
+    "commonsTitle": "File:Joseph Karl Stieler's Beethoven mit dem Manuskript der Missa solemnis.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Joseph_Karl_Stieler%27s_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg",
+    "artist": "Joseph Karl Stieler",
+    "year": "1820",
+    "license": "Public domain"
+  },
+  {
+    "id": "mozart",
+    "file": "mozart.webp",
+    "commonsTitle": "File:Barbara Krafft - Porträt Wolfgang Amadeus Mozart (1819).jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Barbara_Krafft_-_Portr%C3%A4t_Wolfgang_Amadeus_Mozart_(1819).jpg",
+    "artist": "Barbara Krafft",
+    "year": "1819",
+    "license": "Public domain"
+  },
+  {
+    "id": "bach",
+    "file": "bach.webp",
+    "commonsTitle": "File:Johann Sebastian Bach.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Johann_Sebastian_Bach.jpg",
+    "artist": "Elias Gottlob Haussmann",
+    "year": "1748",
+    "license": "Public domain"
+  },
+  {
+    "id": "chopin",
+    "file": "chopin.webp",
+    "commonsTitle": "File:Ary Scheffer - Portret van Frédéric Chopin - DM-S-79 - Dordrechts Museum.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Ary_Scheffer_-_Portret_van_Fr%C3%A9d%C3%A9ric_Chopin_-_DM-S-79_-_Dordrechts_Museum.jpg",
+    "artist": "Ary Scheffer",
+    "year": "1847",
+    "license": "Public domain"
+  },
+  {
+    "id": "vivaldi",
+    "file": "vivaldi.webp",
+    "commonsTitle": "File:Antonio Vivaldi portrait.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Antonio_Vivaldi_portrait.jpg",
+    "artist": "Unidentified painter",
+    "year": "1723",
+    "license": "Public domain"
+  },
+  {
+    "id": "tchaikovsky",
+    "file": "tchaikovsky.webp",
+    "commonsTitle": "File:Porträt des Komponisten Pjotr I. Tschaikowski (1840-1893).jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Portr%C3%A4t_des_Komponisten_Pjotr_I._Tschaikowski_(1840-1893).jpg",
+    "artist": "Nikolai Kuznetsov",
+    "year": "1906",
+    "license": "Public domain"
+  }
+]
