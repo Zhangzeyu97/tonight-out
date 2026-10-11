@@ -2,13 +2,14 @@
   "id": "vivaldi-spring-accident",
   "musician": "vivaldi",
   "piece": "spring",
+  "instrument": "violin",
   "kind": "accident",
   "audio": "assets/audio/pilot/vivaldi-spring-accident.mp3",
   "duration": 19.794328,
   "view": "pitch",
   "range": [
     36,
-    120
+    96
   ],
   "notes": [
     {
@@ -1078,6 +1079,14 @@
       ]
     },
     {
+      "t": 9.0,
+      "d": 0.48,
+      "p": 59,
+      "v": 0.275591,
+      "part": "tutti",
+      "ok": true
+    },
+    {
       "t": 9.032881,
       "d": 0.020776,
       "p": 109,
@@ -1343,6 +1352,14 @@
         0.102948,
         -0.468308
       ]
+    },
+    {
+      "t": 11.3,
+      "d": 0.48,
+      "p": 52,
+      "v": 0.275591,
+      "part": "tutti",
+      "ok": true
     },
     {
       "t": 11.331824,
@@ -2582,6 +2599,14 @@
       "d": 0.306762,
       "p": 52,
       "v": 0.393701,
+      "part": "tutti",
+      "ok": true
+    },
+    {
+      "t": 18.424328,
+      "d": 0.6,
+      "p": 52,
+      "v": 0.275591,
       "part": "tutti",
       "ok": true
     },

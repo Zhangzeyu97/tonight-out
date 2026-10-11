@@ -2,6 +2,7 @@
   "id": "beethoven-fur-elise-concert",
   "musician": "beethoven",
   "piece": "fur-elise",
+  "instrument": "piano",
   "kind": "concert",
   "audio": "assets/audio/pilot/beethoven-fur-elise-concert.mp3",
   "duration": 44.515326,
@@ -2248,6 +2249,22 @@
   ],
   "curves": [],
   "events": [
+    {
+      "t": 1,
+      "type": "caption",
+      "zh": "这两键终于听话",
+      "en": "Those two keys behave at last",
+      "d": 2,
+      "who": "narrator"
+    },
+    {
+      "t": 35,
+      "type": "caption",
+      "zh": "绕了一圈，还在A小调",
+      "en": "Back home in A minor",
+      "d": 2,
+      "who": "narrator"
+    },
     {
       "t": 43.485326,
       "type": "cheer"

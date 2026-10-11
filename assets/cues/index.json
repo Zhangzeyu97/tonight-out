@@ -1,0 +1,328 @@
+{
+  "clips": [
+    {
+      "id": "bach-prelude-c-accident",
+      "musician": "bach",
+      "piece": "prelude-c",
+      "kind": "accident",
+      "duration": 23.03,
+      "view": "keyboard",
+      "instrument": "harpsichord"
+    },
+    {
+      "id": "bach-prelude-c-concert",
+      "musician": "bach",
+      "piece": "prelude-c",
+      "kind": "concert",
+      "duration": 45.342162,
+      "view": "keyboard",
+      "instrument": "harpsichord"
+    },
+    {
+      "id": "bach-prelude-c-wreck",
+      "musician": "bach",
+      "piece": "prelude-c",
+      "kind": "wreck",
+      "duration": 16.3,
+      "view": "keyboard",
+      "instrument": "harpsichord"
+    },
+    {
+      "id": "bach-toccata-accident",
+      "musician": "bach",
+      "piece": "toccata",
+      "kind": "accident",
+      "duration": 19.08,
+      "view": "keyboard",
+      "instrument": "organ"
+    },
+    {
+      "id": "bach-toccata-concert",
+      "musician": "bach",
+      "piece": "toccata",
+      "kind": "concert",
+      "duration": 51.287024,
+      "view": "keyboard",
+      "instrument": "organ"
+    },
+    {
+      "id": "bach-toccata-wreck",
+      "musician": "bach",
+      "piece": "toccata",
+      "kind": "wreck",
+      "duration": 15.875,
+      "view": "keyboard",
+      "instrument": "organ"
+    },
+    {
+      "id": "beethoven-fur-elise-accident",
+      "musician": "beethoven",
+      "piece": "fur-elise",
+      "kind": "accident",
+      "duration": 18.797515,
+      "view": "keyboard",
+      "instrument": "piano"
+    },
+    {
+      "id": "beethoven-fur-elise-concert",
+      "musician": "beethoven",
+      "piece": "fur-elise",
+      "kind": "concert",
+      "duration": 44.515326,
+      "view": "keyboard",
+      "instrument": "piano"
+    },
+    {
+      "id": "beethoven-fur-elise-wreck",
+      "musician": "beethoven",
+      "piece": "fur-elise",
+      "kind": "wreck",
+      "duration": 15.41,
+      "view": "keyboard",
+      "instrument": "piano"
+    },
+    {
+      "id": "beethoven-symphony5-accident",
+      "musician": "beethoven",
+      "piece": "symphony5",
+      "kind": "accident",
+      "duration": 19.83,
+      "view": "ensemble",
+      "instrument": "orchestra"
+    },
+    {
+      "id": "beethoven-symphony5-concert",
+      "musician": "beethoven",
+      "piece": "symphony5",
+      "kind": "concert",
+      "duration": 47.024045,
+      "view": "ensemble",
+      "instrument": "orchestra"
+    },
+    {
+      "id": "beethoven-symphony5-wreck",
+      "musician": "beethoven",
+      "piece": "symphony5",
+      "kind": "wreck",
+      "duration": 13.39,
+      "view": "ensemble",
+      "instrument": "orchestra"
+    },
+    {
+      "id": "chopin-minute-waltz-accident",
+      "musician": "chopin",
+      "piece": "minute-waltz",
+      "kind": "accident",
+      "duration": 18.896223,
+      "view": "keyboard",
+      "instrument": "piano"
+    },
+    {
+      "id": "chopin-minute-waltz-concert",
+      "musician": "chopin",
+      "piece": "minute-waltz",
+      "kind": "concert",
+      "duration": 43.665858,
+      "view": "keyboard",
+      "instrument": "piano"
+    },
+    {
+      "id": "chopin-minute-waltz-wreck",
+      "musician": "chopin",
+      "piece": "minute-waltz",
+      "kind": "wreck",
+      "duration": 17.80276,
+      "view": "keyboard",
+      "instrument": "piano"
+    },
+    {
+      "id": "chopin-nocturne-accident",
+      "musician": "chopin",
+      "piece": "nocturne",
+      "kind": "accident",
+      "duration": 20.5157,
+      "view": "keyboard",
+      "instrument": "piano"
+    },
+    {
+      "id": "chopin-nocturne-concert",
+      "musician": "chopin",
+      "piece": "nocturne",
+      "kind": "concert",
+      "duration": 47.23491,
+      "view": "keyboard",
+      "instrument": "piano"
+    },
+    {
+      "id": "chopin-nocturne-wreck",
+      "musician": "chopin",
+      "piece": "nocturne",
+      "kind": "wreck",
+      "duration": 16.88,
+      "view": "keyboard",
+      "instrument": "piano"
+    },
+    {
+      "id": "mozart-nachtmusik-accident",
+      "musician": "mozart",
+      "piece": "nachtmusik",
+      "kind": "accident",
+      "duration": 20.35,
+      "view": "ensemble",
+      "instrument": "strings"
+    },
+    {
+      "id": "mozart-nachtmusik-concert",
+      "musician": "mozart",
+      "piece": "nachtmusik",
+      "kind": "concert",
+      "duration": 41.16753,
+      "view": "ensemble",
+      "instrument": "strings"
+    },
+    {
+      "id": "mozart-nachtmusik-wreck",
+      "musician": "mozart",
+      "piece": "nachtmusik",
+      "kind": "wreck",
+      "duration": 16.13,
+      "view": "ensemble",
+      "instrument": "strings"
+    },
+    {
+      "id": "mozart-turca-accident",
+      "musician": "mozart",
+      "piece": "turca",
+      "kind": "accident",
+      "duration": 18.28,
+      "view": "keyboard",
+      "instrument": "piano"
+    },
+    {
+      "id": "mozart-turca-concert",
+      "musician": "mozart",
+      "piece": "turca",
+      "kind": "concert",
+      "duration": 42.68865,
+      "view": "keyboard",
+      "instrument": "piano"
+    },
+    {
+      "id": "mozart-turca-wreck",
+      "musician": "mozart",
+      "piece": "turca",
+      "kind": "wreck",
+      "duration": 16.6,
+      "view": "keyboard",
+      "instrument": "piano"
+    },
+    {
+      "id": "tchaikovsky-sugar-plum-accident",
+      "musician": "tchaikovsky",
+      "piece": "sugar-plum",
+      "kind": "accident",
+      "duration": 18.356499,
+      "view": "keyboard",
+      "instrument": "celesta"
+    },
+    {
+      "id": "tchaikovsky-sugar-plum-concert",
+      "musician": "tchaikovsky",
+      "piece": "sugar-plum",
+      "kind": "concert",
+      "duration": 48.470551,
+      "view": "keyboard",
+      "instrument": "celesta"
+    },
+    {
+      "id": "tchaikovsky-sugar-plum-wreck",
+      "musician": "tchaikovsky",
+      "piece": "sugar-plum",
+      "kind": "wreck",
+      "duration": 16.856239,
+      "view": "keyboard",
+      "instrument": "celesta"
+    },
+    {
+      "id": "tchaikovsky-swan-lake-accident",
+      "musician": "tchaikovsky",
+      "piece": "swan-lake",
+      "kind": "accident",
+      "duration": 19.804505,
+      "view": "pitch",
+      "instrument": "oboe"
+    },
+    {
+      "id": "tchaikovsky-swan-lake-concert",
+      "musician": "tchaikovsky",
+      "piece": "swan-lake",
+      "kind": "concert",
+      "duration": 46.691262,
+      "view": "pitch",
+      "instrument": "oboe"
+    },
+    {
+      "id": "tchaikovsky-swan-lake-wreck",
+      "musician": "tchaikovsky",
+      "piece": "swan-lake",
+      "kind": "wreck",
+      "duration": 17.491668,
+      "view": "pitch",
+      "instrument": "oboe"
+    },
+    {
+      "id": "vivaldi-spring-accident",
+      "musician": "vivaldi",
+      "piece": "spring",
+      "kind": "accident",
+      "duration": 19.794328,
+      "view": "pitch",
+      "instrument": "violin"
+    },
+    {
+      "id": "vivaldi-spring-concert",
+      "musician": "vivaldi",
+      "piece": "spring",
+      "kind": "concert",
+      "duration": 52.218239,
+      "view": "pitch",
+      "instrument": "violin"
+    },
+    {
+      "id": "vivaldi-spring-wreck",
+      "musician": "vivaldi",
+      "piece": "spring",
+      "kind": "wreck",
+      "duration": 17.07189,
+      "view": "pitch",
+      "instrument": "violin"
+    },
+    {
+      "id": "vivaldi-winter-accident",
+      "musician": "vivaldi",
+      "piece": "winter",
+      "kind": "accident",
+      "duration": 17.95,
+      "view": "pitch",
+      "instrument": "violin"
+    },
+    {
+      "id": "vivaldi-winter-concert",
+      "musician": "vivaldi",
+      "piece": "winter",
+      "kind": "concert",
+      "duration": 45.359938,
+      "view": "pitch",
+      "instrument": "violin"
+    },
+    {
+      "id": "vivaldi-winter-wreck",
+      "musician": "vivaldi",
+      "piece": "winter",
+      "kind": "wreck",
+      "duration": 13.25,
+      "view": "pitch",
+      "instrument": "violin"
+    }
+  ]
+}

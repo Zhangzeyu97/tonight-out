@@ -2,6 +2,7 @@
   "id": "vivaldi-spring-concert",
   "musician": "vivaldi",
   "piece": "spring",
+  "instrument": "violin",
   "kind": "concert",
   "audio": "assets/audio/pilot/vivaldi-spring-concert.mp3",
   "duration": 52.218239,
@@ -27124,6 +27125,22 @@
     }
   ],
   "events": [
+    {
+      "t": 1,
+      "type": "caption",
+      "zh": "春天准时上班",
+      "en": "Spring clocks in on time",
+      "d": 2,
+      "who": "narrator"
+    },
+    {
+      "t": 30,
+      "type": "caption",
+      "zh": "小提琴先替鸟唱",
+      "en": "Violin auditions for the birds",
+      "d": 2,
+      "who": "narrator"
+    },
     {
       "t": 51.188239,
       "type": "cheer"

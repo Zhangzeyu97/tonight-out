@@ -1,6 +1,127 @@
 {
-  "title": "Classical-music theater: Beethoven / Vivaldi audio pilot",
-  "beethoven": {
+  "bach-prelude-c": {
+    "composer": "Johann Sebastian Bach",
+    "work": "WTC I Prelude in C major BWV 846; Fugue in C major BWV 846 (accident)",
+    "score": "Prelude: Mutopia-2011/09/12-5; Fugue: Mutopia-2013/03/22-4",
+    "typesetter": "Prelude: Tobias Erbsland (header maintainer: Tobias Erbsland); Fugue: Andreas Scherer",
+    "source_editors": "Prelude header: Han-Wen Nienhuys and Tobias Erbsland",
+    "score_license": "Public Domain",
+    "audio_license": "CC0-1.0",
+    "changes": "GM Harpsichord, finger legato and subtle phrase timing; concert opening eight bars plus original closing three bars; complete Prelude full. Miscounted 3/1 pattern, chromatic drift and recovery. Accident switches into actual Fugue subject/answer, then returns to Prelude and its memorized cadence.",
+    "line": {
+      "zh": "乐谱 Mutopia",
+      "en": "Score: Mutopia"
+    },
+    "source": {
+      "file": "_downloads/audio/sources/wtk1-prelude1.mid",
+      "sha256": "874e07d0479542971bfceaf420d6117da8d602d89d26eea4610e7dd1ef58bf26",
+      "ticks_per_quarter": 384,
+      "metadata": [
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('time_signature', numerator=4, denominator=4, clocks_per_click=18, notated_32nd_notes_per_beat=8, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('set_tempo', tempo=1000000, time=0)"
+        }
+      ],
+      "source_end_beat": 140.0
+    },
+    "score_license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "typesetter/arranger": "Prelude: Tobias Erbsland (header maintainer: Tobias Erbsland); Fugue: Andreas Scherer",
+    "source_file": "_downloads/audio/sources/wtk1-prelude1.mid",
+    "sha256": "874e07d0479542971bfceaf420d6117da8d602d89d26eea4610e7dd1ef58bf26",
+    "sources": [
+      {
+        "file": "_downloads/audio/sources/wtk1-prelude1.mid",
+        "sha256": "874e07d0479542971bfceaf420d6117da8d602d89d26eea4610e7dd1ef58bf26"
+      },
+      {
+        "file": "_downloads/audio/sources/wtk1-prelude1.ly",
+        "sha256": "afa237b10637ca7839b4c9e98b64ba89c781e2cfc1b980679b2632a31951aacd"
+      },
+      {
+        "file": "_downloads/audio/sources/wtk1-fugue1.mid",
+        "sha256": "e89f7d09096bbaf1bcb9e7b5d083c92e396fb9432c956d27185864e17a314ef1"
+      },
+      {
+        "file": "_downloads/audio/sources/wtk1-fugue1.ly",
+        "sha256": "10d51eabac0fdfeddcbb7d76ad3bf361d4c095feec3ce7aa61d034d5b836c708"
+      }
+    ],
+    "soundfont": {
+      "file": "_downloads/audio/MuseScore_General.sf2",
+      "sha256": "ee51d2c4b1525e70f19a45909c4fd7a2e26d91d115fa89dbf5a6bc413d8b9bf3",
+      "license": "MIT",
+      "complete_notices": "# MuseScore_General.sf2\n---\n\nCurrent version: 0.2  13th May 2020\n\nThis is a scaled-down version of **MuseScore_General-HQ.sf2** that replaces some of the larger instruments to save memory and CPU on older PCs. This SoundFont is currently a work-in-progress. Detailed information on presets and sample sources used can be found in \"MuseScore_General_Sample_Sources.csv\". All instruments without attribution are still using samples from FluidR3Mono.\n\nFluidR3 (original version) by Frank Wen Copyright (c) 2000-02\n\nMono conversion (FluidR3Mono) by Michael Cowgill Copyright (c) 2014-17\n\nAdaptation for MuseScore_General.sf2 by S. Christian Collins Copyright (c) 2018-19\n\nTemple Blocks instrument provided by Ethan Winer Copyright (c) 2002\n\nDrumline Cymbals provided by Michael Schorsch Copyright (c) 2016\n\nMuseScore_General.sf2 is shared under the MIT license as described in COPYING, as was FluidR3Mono and FluidR3 before it.\n\nThe COPYING and README files from the original FluidR3GM file are now displayed here for reference.\n\nThe acknowledgements and copyright notices above must be included in any derivative work.\n\n\nREADME\n---\n\nFluid (R3) SoundFont\n\nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nI hereby release Fluid under the MIT license, as described in COPYING.\n\n\nThanks to Toby Smithe for helping to get Fluid included in Ubuntu.\n\nThis package, of course, is the original Release 3 of Fluid.  \n\n\nFluid was constructed in part from samples found in the public domain that I\nedited/cleaned/remixed/programmed and largely from recordings of my own and\nin conjunction with the people below who helped along the way:\n\nSuren M. Seron\nScott Hanan\nSteve Aupperle\nChris Gillman\nAlex Taubr\nChris Prola\nAndrew Klenk\nWinfried Hubbe \nDylan\nTim\nGort\nUros Katic \nEthan Winer (http://www.ethanwiner.com) \n\n\nIt's obviously been a few years since the project, but its nice to see that\npeople are still enjoying my work and getting good use out of it.  As always,\nI'd like to hear some work done with Fluid so email me, or just email me to\nsay hello and tell me what is going on in the computer musician world.\nWho knows, maybe I'll kick start this project again? ;)\n\n\nCOPYING\n---\n\nMono version:  Copyright (c) 2014-16 Michael Cowgill \nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the \"Software\"), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\n"
+    },
+    "audience": "Theater reactions only; no audience audio"
+  },
+  "bach-toccata": {
+    "composer": "Johann Sebastian Bach",
+    "work": "Toccata and Fugue in D minor BWV 565",
+    "score": "Mutopia-2011/09/11-1780; Bach-Gesellschaft Ausgabe, 1867",
+    "typesetter": "Anonymous",
+    "score_license": "Public Domain",
+    "audio_license": "CC0-1.0",
+    "changes": "GM Church Organ plenum with separate manual/pedal, score ornaments, opening fermatas and short causal room; concert through first D-minor cadence. Quarter=84 full. Endless prall, score-derived run falling into pedals, monophonic haunted tremulant; audible bat chirps and ciphering organ pipe.",
+    "score_url": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=1780",
+    "line": {
+      "zh": "乐谱 Mutopia",
+      "en": "Score: Mutopia"
+    },
+    "source": {
+      "file": "_downloads/audio/sources/ToccataFugue.mid",
+      "sha256": "1aabd00967aded08d6633482c211af46f679d97f01cfeaca43c83a59dfeeeb6b",
+      "ticks_per_quarter": 384,
+      "metadata": [
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('time_signature', numerator=4, denominator=4, clocks_per_click=18, notated_32nd_notes_per_beat=8, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('set_tempo', tempo=1000000, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Dm', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Dm', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Dm', time=0)"
+        }
+      ],
+      "source_end_beat": 572.0000000000006
+    },
+    "score_license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "typesetter/arranger": "Anonymous",
+    "source_file": "_downloads/audio/sources/ToccataFugue.mid",
+    "sha256": "1aabd00967aded08d6633482c211af46f679d97f01cfeaca43c83a59dfeeeb6b",
+    "sources": [
+      {
+        "file": "_downloads/audio/sources/ToccataFugue.mid",
+        "sha256": "1aabd00967aded08d6633482c211af46f679d97f01cfeaca43c83a59dfeeeb6b"
+      },
+      {
+        "file": "_downloads/audio/sources/ToccataFugue.ly",
+        "sha256": "1640bbd2bf11a95e18db03fea285d30718254af0a694e1c36533d8109d71718c"
+      }
+    ],
+    "soundfont": {
+      "file": "_downloads/audio/MuseScore_General.sf2",
+      "sha256": "ee51d2c4b1525e70f19a45909c4fd7a2e26d91d115fa89dbf5a6bc413d8b9bf3",
+      "license": "MIT",
+      "complete_notices": "# MuseScore_General.sf2\n---\n\nCurrent version: 0.2  13th May 2020\n\nThis is a scaled-down version of **MuseScore_General-HQ.sf2** that replaces some of the larger instruments to save memory and CPU on older PCs. This SoundFont is currently a work-in-progress. Detailed information on presets and sample sources used can be found in \"MuseScore_General_Sample_Sources.csv\". All instruments without attribution are still using samples from FluidR3Mono.\n\nFluidR3 (original version) by Frank Wen Copyright (c) 2000-02\n\nMono conversion (FluidR3Mono) by Michael Cowgill Copyright (c) 2014-17\n\nAdaptation for MuseScore_General.sf2 by S. Christian Collins Copyright (c) 2018-19\n\nTemple Blocks instrument provided by Ethan Winer Copyright (c) 2002\n\nDrumline Cymbals provided by Michael Schorsch Copyright (c) 2016\n\nMuseScore_General.sf2 is shared under the MIT license as described in COPYING, as was FluidR3Mono and FluidR3 before it.\n\nThe COPYING and README files from the original FluidR3GM file are now displayed here for reference.\n\nThe acknowledgements and copyright notices above must be included in any derivative work.\n\n\nREADME\n---\n\nFluid (R3) SoundFont\n\nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nI hereby release Fluid under the MIT license, as described in COPYING.\n\n\nThanks to Toby Smithe for helping to get Fluid included in Ubuntu.\n\nThis package, of course, is the original Release 3 of Fluid.  \n\n\nFluid was constructed in part from samples found in the public domain that I\nedited/cleaned/remixed/programmed and largely from recordings of my own and\nin conjunction with the people below who helped along the way:\n\nSuren M. Seron\nScott Hanan\nSteve Aupperle\nChris Gillman\nAlex Taubr\nChris Prola\nAndrew Klenk\nWinfried Hubbe \nDylan\nTim\nGort\nUros Katic \nEthan Winer (http://www.ethanwiner.com) \n\n\nIt's obviously been a few years since the project, but its nice to see that\npeople are still enjoying my work and getting good use out of it.  As always,\nI'd like to hear some work done with Fluid so email me, or just email me to\nsay hello and tell me what is going on in the computer musician world.\nWho knows, maybe I'll kick start this project again? ;)\n\n\nCOPYING\n---\n\nMono version:  Copyright (c) 2014-16 Michael Cowgill \nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the \"Software\"), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\n"
+    },
+    "audience": "Theater reactions only; no audience audio"
+  },
+  "beethoven-fur-elise": {
     "composer": "Ludwig van Beethoven",
     "work": "Für Elise, WoO 59",
     "score": "Mutopia-2015/08/18-931",
@@ -32,9 +153,482 @@
     },
     "audio_license": "CC0-1.0",
     "audio_license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "changes": "Score-derived performance, expanded repeats, tempo eighth=126, dynamics, rubato, baked harmony sustain; comic edits for wreck/accident."
+    "changes": "Score-derived performance, expanded repeats, tempo eighth=126, dynamics, rubato, baked harmony sustain; comic edits for wreck/accident.",
+    "line": {
+      "zh": "乐谱 Mutopia",
+      "en": "Score: Mutopia"
+    },
+    "score_url": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=931",
+    "score_license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "typesetter/arranger": "Stelios Samelis",
+    "source_file": "_downloads/audio/sources/fur_Elise_WoO59.mid",
+    "sha256": "1c12c21c7bbf4cf163896732672648a69d497636059837abd153c71abe50215a",
+    "sources": [
+      {
+        "file": "_downloads/audio/sources/fur_Elise_WoO59.mid",
+        "sha256": "1c12c21c7bbf4cf163896732672648a69d497636059837abd153c71abe50215a"
+      }
+    ],
+    "soundfont": {
+      "file": "_downloads/audio/MuseScore_General.sf2",
+      "sha256": "ee51d2c4b1525e70f19a45909c4fd7a2e26d91d115fa89dbf5a6bc413d8b9bf3",
+      "license": "MIT",
+      "complete_notices": "# MuseScore_General.sf2\n---\n\nCurrent version: 0.2  13th May 2020\n\nThis is a scaled-down version of **MuseScore_General-HQ.sf2** that replaces some of the larger instruments to save memory and CPU on older PCs. This SoundFont is currently a work-in-progress. Detailed information on presets and sample sources used can be found in \"MuseScore_General_Sample_Sources.csv\". All instruments without attribution are still using samples from FluidR3Mono.\n\nFluidR3 (original version) by Frank Wen Copyright (c) 2000-02\n\nMono conversion (FluidR3Mono) by Michael Cowgill Copyright (c) 2014-17\n\nAdaptation for MuseScore_General.sf2 by S. Christian Collins Copyright (c) 2018-19\n\nTemple Blocks instrument provided by Ethan Winer Copyright (c) 2002\n\nDrumline Cymbals provided by Michael Schorsch Copyright (c) 2016\n\nMuseScore_General.sf2 is shared under the MIT license as described in COPYING, as was FluidR3Mono and FluidR3 before it.\n\nThe COPYING and README files from the original FluidR3GM file are now displayed here for reference.\n\nThe acknowledgements and copyright notices above must be included in any derivative work.\n\n\nREADME\n---\n\nFluid (R3) SoundFont\n\nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nI hereby release Fluid under the MIT license, as described in COPYING.\n\n\nThanks to Toby Smithe for helping to get Fluid included in Ubuntu.\n\nThis package, of course, is the original Release 3 of Fluid.  \n\n\nFluid was constructed in part from samples found in the public domain that I\nedited/cleaned/remixed/programmed and largely from recordings of my own and\nin conjunction with the people below who helped along the way:\n\nSuren M. Seron\nScott Hanan\nSteve Aupperle\nChris Gillman\nAlex Taubr\nChris Prola\nAndrew Klenk\nWinfried Hubbe \nDylan\nTim\nGort\nUros Katic \nEthan Winer (http://www.ethanwiner.com) \n\n\nIt's obviously been a few years since the project, but its nice to see that\npeople are still enjoying my work and getting good use out of it.  As always,\nI'd like to hear some work done with Fluid so email me, or just email me to\nsay hello and tell me what is going on in the computer musician world.\nWho knows, maybe I'll kick start this project again? ;)\n\n\nCOPYING\n---\n\nMono version:  Copyright (c) 2014-16 Michael Cowgill \nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the \"Software\"), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\n"
+    },
+    "audience": "Theater reactions only; no audience audio"
   },
-  "vivaldi": {
+  "beethoven-symphony5": {
+    "composer": "Ludwig van Beethoven",
+    "work": "Symphony No. 5 in C minor, Op. 67, movement I Allegro con brio",
+    "score": "Mutopia-2017/11/05-941",
+    "typesetter": "Stelios Samelis (adapted to LilyPond 2.16.2 by Johannes Heinecke)",
+    "score_license": "Public Domain",
+    "score_license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "audio_license": "CC0-1.0",
+    "changes": "Half note=104 with extended opening fermatas, section balance, GM horns/trumpets corrected from mislabeled English horn, expressive CC11 envelopes; opening concert excerpt joined at the note-plan level to the exposition E-flat closing cadence; motif-based comedy, pp accompaniment for bright wooden-door replies.",
+    "score_url": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=941",
+    "line": {
+      "zh": "乐谱 Mutopia",
+      "en": "Score: Mutopia"
+    },
+    "source": {
+      "file": "_downloads/audio/sources/Symphony5_1.mid",
+      "sha256": "0ce1bca911ba8e6234fd2e474a9b6da4c968c5cfe85b0cccfe7e56505df52046",
+      "ticks_per_quarter": 384,
+      "metadata": [
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('time_signature', numerator=2, denominator=4, clocks_per_click=18, notated_32nd_notes_per_beat=8, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('set_tempo', tempo=312500, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Cm', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Cm', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Dm', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Cm', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='C', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='C', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='C', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Cm', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Cm', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Cm', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Cm', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Cm', time=0)"
+        }
+      ],
+      "source_end_beat": 1013.0
+    },
+    "typesetter/arranger": "Stelios Samelis (adapted to LilyPond 2.16.2 by Johannes Heinecke)",
+    "source_file": "_downloads/audio/sources/Symphony5_1.mid",
+    "sha256": "0ce1bca911ba8e6234fd2e474a9b6da4c968c5cfe85b0cccfe7e56505df52046",
+    "sources": [
+      {
+        "file": "_downloads/audio/sources/Symphony5_1.mid",
+        "sha256": "0ce1bca911ba8e6234fd2e474a9b6da4c968c5cfe85b0cccfe7e56505df52046"
+      }
+    ],
+    "soundfont": {
+      "file": "_downloads/audio/MuseScore_General.sf2",
+      "sha256": "ee51d2c4b1525e70f19a45909c4fd7a2e26d91d115fa89dbf5a6bc413d8b9bf3",
+      "license": "MIT",
+      "complete_notices": "# MuseScore_General.sf2\n---\n\nCurrent version: 0.2  13th May 2020\n\nThis is a scaled-down version of **MuseScore_General-HQ.sf2** that replaces some of the larger instruments to save memory and CPU on older PCs. This SoundFont is currently a work-in-progress. Detailed information on presets and sample sources used can be found in \"MuseScore_General_Sample_Sources.csv\". All instruments without attribution are still using samples from FluidR3Mono.\n\nFluidR3 (original version) by Frank Wen Copyright (c) 2000-02\n\nMono conversion (FluidR3Mono) by Michael Cowgill Copyright (c) 2014-17\n\nAdaptation for MuseScore_General.sf2 by S. Christian Collins Copyright (c) 2018-19\n\nTemple Blocks instrument provided by Ethan Winer Copyright (c) 2002\n\nDrumline Cymbals provided by Michael Schorsch Copyright (c) 2016\n\nMuseScore_General.sf2 is shared under the MIT license as described in COPYING, as was FluidR3Mono and FluidR3 before it.\n\nThe COPYING and README files from the original FluidR3GM file are now displayed here for reference.\n\nThe acknowledgements and copyright notices above must be included in any derivative work.\n\n\nREADME\n---\n\nFluid (R3) SoundFont\n\nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nI hereby release Fluid under the MIT license, as described in COPYING.\n\n\nThanks to Toby Smithe for helping to get Fluid included in Ubuntu.\n\nThis package, of course, is the original Release 3 of Fluid.  \n\n\nFluid was constructed in part from samples found in the public domain that I\nedited/cleaned/remixed/programmed and largely from recordings of my own and\nin conjunction with the people below who helped along the way:\n\nSuren M. Seron\nScott Hanan\nSteve Aupperle\nChris Gillman\nAlex Taubr\nChris Prola\nAndrew Klenk\nWinfried Hubbe \nDylan\nTim\nGort\nUros Katic \nEthan Winer (http://www.ethanwiner.com) \n\n\nIt's obviously been a few years since the project, but its nice to see that\npeople are still enjoying my work and getting good use out of it.  As always,\nI'd like to hear some work done with Fluid so email me, or just email me to\nsay hello and tell me what is going on in the computer musician world.\nWho knows, maybe I'll kick start this project again? ;)\n\n\nCOPYING\n---\n\nMono version:  Copyright (c) 2014-16 Michael Cowgill \nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the \"Software\"), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\n"
+    },
+    "audience": "Theater reactions only; no audience audio"
+  },
+  "chopin-minute-waltz": {
+    "composer": "Frédéric Chopin",
+    "work": "Waltz in D-flat major, Op. 64 No. 1 (Minute Waltz / Valse du petit chien)",
+    "score": "Mutopia-2015/01/17-483",
+    "typesetter": "Magnus Lewis-Smith",
+    "edition": "Edition Peters",
+    "score_source_url": "https://www.mutopiaproject.org/ftp/ChopinFF/O64/chopin_valse_op64_no1/chopin_valse_op64_no1.mid",
+    "score_license": "Public Domain",
+    "score_license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "audio_license": "CC0-1.0",
+    "audio_license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attribution_status": "Typesetter and numeric footer require verification against the Mutopia header; neither occurs in the offline MIDI.",
+    "changes": "Source pitches/rhythms and ornaments; light voicing, local bar pedal, Molto vivace and slower Sostenuto; concert excerpt joined to source closing cadence; continuous stopwatch accelerando and puppy duet.",
+    "score_url": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=483",
+    "line": {
+      "zh": "乐谱 Mutopia",
+      "en": "Score: Mutopia"
+    },
+    "source": {
+      "file": "_downloads/audio/sources/chopin_valse_op64_no1.mid",
+      "sha256": "62333ad9f9b22603d009734ab500330a12ac09aeca13d185ac0ba64a7fb9d206",
+      "ticks_per_quarter": 384,
+      "metadata": [
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('time_signature', numerator=3, denominator=4, clocks_per_click=18, notated_32nd_notes_per_beat=8, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('set_tempo', tempo=214285, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Db', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Db', time=0)"
+        }
+      ],
+      "source_end_beat": 419.0
+    },
+    "typesetter/arranger": "Magnus Lewis-Smith",
+    "source_file": "_downloads/audio/sources/chopin_valse_op64_no1.mid",
+    "sha256": "62333ad9f9b22603d009734ab500330a12ac09aeca13d185ac0ba64a7fb9d206",
+    "sources": [
+      {
+        "file": "_downloads/audio/sources/chopin_valse_op64_no1.mid",
+        "sha256": "62333ad9f9b22603d009734ab500330a12ac09aeca13d185ac0ba64a7fb9d206"
+      }
+    ],
+    "soundfont": {
+      "file": "_downloads/audio/MuseScore_General.sf2",
+      "sha256": "ee51d2c4b1525e70f19a45909c4fd7a2e26d91d115fa89dbf5a6bc413d8b9bf3",
+      "license": "MIT",
+      "complete_notices": "# MuseScore_General.sf2\n---\n\nCurrent version: 0.2  13th May 2020\n\nThis is a scaled-down version of **MuseScore_General-HQ.sf2** that replaces some of the larger instruments to save memory and CPU on older PCs. This SoundFont is currently a work-in-progress. Detailed information on presets and sample sources used can be found in \"MuseScore_General_Sample_Sources.csv\". All instruments without attribution are still using samples from FluidR3Mono.\n\nFluidR3 (original version) by Frank Wen Copyright (c) 2000-02\n\nMono conversion (FluidR3Mono) by Michael Cowgill Copyright (c) 2014-17\n\nAdaptation for MuseScore_General.sf2 by S. Christian Collins Copyright (c) 2018-19\n\nTemple Blocks instrument provided by Ethan Winer Copyright (c) 2002\n\nDrumline Cymbals provided by Michael Schorsch Copyright (c) 2016\n\nMuseScore_General.sf2 is shared under the MIT license as described in COPYING, as was FluidR3Mono and FluidR3 before it.\n\nThe COPYING and README files from the original FluidR3GM file are now displayed here for reference.\n\nThe acknowledgements and copyright notices above must be included in any derivative work.\n\n\nREADME\n---\n\nFluid (R3) SoundFont\n\nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nI hereby release Fluid under the MIT license, as described in COPYING.\n\n\nThanks to Toby Smithe for helping to get Fluid included in Ubuntu.\n\nThis package, of course, is the original Release 3 of Fluid.  \n\n\nFluid was constructed in part from samples found in the public domain that I\nedited/cleaned/remixed/programmed and largely from recordings of my own and\nin conjunction with the people below who helped along the way:\n\nSuren M. Seron\nScott Hanan\nSteve Aupperle\nChris Gillman\nAlex Taubr\nChris Prola\nAndrew Klenk\nWinfried Hubbe \nDylan\nTim\nGort\nUros Katic \nEthan Winer (http://www.ethanwiner.com) \n\n\nIt's obviously been a few years since the project, but its nice to see that\npeople are still enjoying my work and getting good use out of it.  As always,\nI'd like to hear some work done with Fluid so email me, or just email me to\nsay hello and tell me what is going on in the computer musician world.\nWho knows, maybe I'll kick start this project again? ;)\n\n\nCOPYING\n---\n\nMono version:  Copyright (c) 2014-16 Michael Cowgill \nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the \"Software\"), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\n"
+    },
+    "audience": "Theater reactions only; no audience audio"
+  },
+  "chopin-nocturne": {
+    "composer": "Frédéric Chopin",
+    "work": "Nocturne in E-flat major, Op. 9 No. 2",
+    "score": "Mutopia-2014/12/18-1590",
+    "typesetter": "Renato Biolcati Rinaldi",
+    "edition": "G. Schirmer, New York, 1881",
+    "score_source_url": "https://www.mutopiaproject.org/ftp/ChopinFF/O9/chopin_nocturne_op9_n2/chopin_nocturne_op9_n2.mid",
+    "score_license": "CC BY-SA 3.0 Unported",
+    "score_license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "audio_license": "CC BY-SA 3.0 Unported",
+    "audio_license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "attribution": "Frédéric Chopin — Nocturne Op. 9 No. 2; Mutopia ChopinFF/O9/chopin_nocturne_op9_n2, after Schirmer 1881; typesetter/footer not present in offline MIDI; adaptation by Singer Game contributors (2026).",
+    "attribution_status": "Contributor and numeric footer require verification against the Mutopia source header; supplied MIDI contains neither.",
+    "share_alike": "ALL chopin-nocturne-*.mp3, cue JSON, performance plans and Nocturne timeline portions are CC BY-SA 3.0. Retain attribution, indicate changes and distribute adaptations under CC BY-SA 3.0.",
+    "changes": "Source pitches and written ornaments retained; melody voicing, dotted-quarter harmony pedal, phrased dynamics/rubato; opening concert excerpt; continuous sleepy comedy and synthesized owl duet.",
+    "score_url": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=1590",
+    "line": {
+      "zh": "乐谱 Mutopia · Renato Biolcati Rinaldi",
+      "en": "Score: Mutopia · Renato Biolcati Rinaldi"
+    },
+    "source": {
+      "file": "_downloads/audio/sources/chopin_nocturne_op9_n2.mid",
+      "sha256": "e202d3941ce5f26397f57f59f0e2e4e3ad9e19061fa3c4dc596c5ee6a6a2548e",
+      "ticks_per_quarter": 384,
+      "metadata": [
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('time_signature', numerator=12, denominator=8, clocks_per_click=18, notated_32nd_notes_per_beat=8, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('set_tempo', tempo=909090, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Eb', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Eb', time=0)"
+        }
+      ],
+      "source_end_beat": 222.5
+    },
+    "typesetter/arranger": "Renato Biolcati Rinaldi",
+    "source_file": "_downloads/audio/sources/chopin_nocturne_op9_n2.mid",
+    "sha256": "e202d3941ce5f26397f57f59f0e2e4e3ad9e19061fa3c4dc596c5ee6a6a2548e",
+    "sources": [
+      {
+        "file": "_downloads/audio/sources/chopin_nocturne_op9_n2.mid",
+        "sha256": "e202d3941ce5f26397f57f59f0e2e4e3ad9e19061fa3c4dc596c5ee6a6a2548e"
+      }
+    ],
+    "soundfont": {
+      "file": "_downloads/audio/MuseScore_General.sf2",
+      "sha256": "ee51d2c4b1525e70f19a45909c4fd7a2e26d91d115fa89dbf5a6bc413d8b9bf3",
+      "license": "MIT",
+      "complete_notices": "# MuseScore_General.sf2\n---\n\nCurrent version: 0.2  13th May 2020\n\nThis is a scaled-down version of **MuseScore_General-HQ.sf2** that replaces some of the larger instruments to save memory and CPU on older PCs. This SoundFont is currently a work-in-progress. Detailed information on presets and sample sources used can be found in \"MuseScore_General_Sample_Sources.csv\". All instruments without attribution are still using samples from FluidR3Mono.\n\nFluidR3 (original version) by Frank Wen Copyright (c) 2000-02\n\nMono conversion (FluidR3Mono) by Michael Cowgill Copyright (c) 2014-17\n\nAdaptation for MuseScore_General.sf2 by S. Christian Collins Copyright (c) 2018-19\n\nTemple Blocks instrument provided by Ethan Winer Copyright (c) 2002\n\nDrumline Cymbals provided by Michael Schorsch Copyright (c) 2016\n\nMuseScore_General.sf2 is shared under the MIT license as described in COPYING, as was FluidR3Mono and FluidR3 before it.\n\nThe COPYING and README files from the original FluidR3GM file are now displayed here for reference.\n\nThe acknowledgements and copyright notices above must be included in any derivative work.\n\n\nREADME\n---\n\nFluid (R3) SoundFont\n\nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nI hereby release Fluid under the MIT license, as described in COPYING.\n\n\nThanks to Toby Smithe for helping to get Fluid included in Ubuntu.\n\nThis package, of course, is the original Release 3 of Fluid.  \n\n\nFluid was constructed in part from samples found in the public domain that I\nedited/cleaned/remixed/programmed and largely from recordings of my own and\nin conjunction with the people below who helped along the way:\n\nSuren M. Seron\nScott Hanan\nSteve Aupperle\nChris Gillman\nAlex Taubr\nChris Prola\nAndrew Klenk\nWinfried Hubbe \nDylan\nTim\nGort\nUros Katic \nEthan Winer (http://www.ethanwiner.com) \n\n\nIt's obviously been a few years since the project, but its nice to see that\npeople are still enjoying my work and getting good use out of it.  As always,\nI'd like to hear some work done with Fluid so email me, or just email me to\nsay hello and tell me what is going on in the computer musician world.\nWho knows, maybe I'll kick start this project again? ;)\n\n\nCOPYING\n---\n\nMono version:  Copyright (c) 2014-16 Michael Cowgill \nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the \"Software\"), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\n"
+    },
+    "audience": "Theater reactions only; no audience audio"
+  },
+  "mozart-nachtmusik": {
+    "composer": "Wolfgang Amadeus Mozart",
+    "work": "Eine kleine Nachtmusik K.525, I: Allegro",
+    "score": "Mutopia-2007/01/01-900",
+    "typesetter": "Anonymous (Mutopia maintainer)",
+    "score_license": "Public Domain",
+    "audio_license": "CC0-1.0",
+    "changes": "All four original staves preserved; section strings, short/long bow gates, CC11 dynamics; full quarter=148, concert quarter=132 with opening theme repeat and original G-major cadence at source beat 54. Rocket overshoots, late inner voices and cello rescue; E-string snap and A-string octave recovery.",
+    "score_url": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=900",
+    "line": {
+      "zh": "乐谱 Mutopia",
+      "en": "Score: Mutopia"
+    },
+    "source": {
+      "file": "_downloads/audio/sources/eine-kleine-nachtmusik-mvt1.mid",
+      "sha256": "f8b6dc991df6e90e2e2e11d561ab2cf8fec47beda747c69984c3fef4b539506b",
+      "ticks_per_quarter": 384,
+      "metadata": [
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('time_signature', numerator=4, denominator=4, clocks_per_click=18, notated_32nd_notes_per_beat=8, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('set_tempo', tempo=416666, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='G', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='G', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='G', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='G', time=0)"
+        }
+      ],
+      "source_end_beat": 767.0
+    },
+    "score_license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "typesetter/arranger": "Anonymous (Mutopia maintainer)",
+    "source_file": "_downloads/audio/sources/eine-kleine-nachtmusik-mvt1.mid",
+    "sha256": "f8b6dc991df6e90e2e2e11d561ab2cf8fec47beda747c69984c3fef4b539506b",
+    "sources": [
+      {
+        "file": "_downloads/audio/sources/eine-kleine-nachtmusik-mvt1.mid",
+        "sha256": "f8b6dc991df6e90e2e2e11d561ab2cf8fec47beda747c69984c3fef4b539506b"
+      }
+    ],
+    "soundfont": {
+      "file": "_downloads/audio/MuseScore_General.sf2",
+      "sha256": "ee51d2c4b1525e70f19a45909c4fd7a2e26d91d115fa89dbf5a6bc413d8b9bf3",
+      "license": "MIT",
+      "complete_notices": "# MuseScore_General.sf2\n---\n\nCurrent version: 0.2  13th May 2020\n\nThis is a scaled-down version of **MuseScore_General-HQ.sf2** that replaces some of the larger instruments to save memory and CPU on older PCs. This SoundFont is currently a work-in-progress. Detailed information on presets and sample sources used can be found in \"MuseScore_General_Sample_Sources.csv\". All instruments without attribution are still using samples from FluidR3Mono.\n\nFluidR3 (original version) by Frank Wen Copyright (c) 2000-02\n\nMono conversion (FluidR3Mono) by Michael Cowgill Copyright (c) 2014-17\n\nAdaptation for MuseScore_General.sf2 by S. Christian Collins Copyright (c) 2018-19\n\nTemple Blocks instrument provided by Ethan Winer Copyright (c) 2002\n\nDrumline Cymbals provided by Michael Schorsch Copyright (c) 2016\n\nMuseScore_General.sf2 is shared under the MIT license as described in COPYING, as was FluidR3Mono and FluidR3 before it.\n\nThe COPYING and README files from the original FluidR3GM file are now displayed here for reference.\n\nThe acknowledgements and copyright notices above must be included in any derivative work.\n\n\nREADME\n---\n\nFluid (R3) SoundFont\n\nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nI hereby release Fluid under the MIT license, as described in COPYING.\n\n\nThanks to Toby Smithe for helping to get Fluid included in Ubuntu.\n\nThis package, of course, is the original Release 3 of Fluid.  \n\n\nFluid was constructed in part from samples found in the public domain that I\nedited/cleaned/remixed/programmed and largely from recordings of my own and\nin conjunction with the people below who helped along the way:\n\nSuren M. Seron\nScott Hanan\nSteve Aupperle\nChris Gillman\nAlex Taubr\nChris Prola\nAndrew Klenk\nWinfried Hubbe \nDylan\nTim\nGort\nUros Katic \nEthan Winer (http://www.ethanwiner.com) \n\n\nIt's obviously been a few years since the project, but its nice to see that\npeople are still enjoying my work and getting good use out of it.  As always,\nI'd like to hear some work done with Fluid so email me, or just email me to\nsay hello and tell me what is going on in the computer musician world.\nWho knows, maybe I'll kick start this project again? ;)\n\n\nCOPYING\n---\n\nMono version:  Copyright (c) 2014-16 Michael Cowgill \nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the \"Software\"), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\n"
+    },
+    "audience": "Theater reactions only; no audience audio"
+  },
+  "mozart-turca": {
+    "composer": "Wolfgang Amadeus Mozart",
+    "work": "Piano Sonata K.331, III: Rondo alla Turca",
+    "score": "Mutopia-2015/08/13-108",
+    "typesetter": "Rune Zedeler and Chris Sawer",
+    "attribution_status": "Composer/source/license known from supplied provenance; typesetter and Mutopia id unverified",
+    "score_license": "Public Domain",
+    "audio_license": "CC0-1.0",
+    "changes": "Quarter=126 Allegretto, recovered both unnamed staves, phrase dynamics and harmony sustain; opening repeat and original final cadence in concert; score-time accelerando, neighbour slips and turkey march duet in comedy.",
+    "score_url": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=108",
+    "line": {
+      "zh": "乐谱 Mutopia",
+      "en": "Score: Mutopia"
+    },
+    "source": {
+      "file": "_downloads/audio/sources/KV331_3_RondoAllaTurca.mid",
+      "sha256": "c14299cbdd34c8b2081da84dc06519ef8a52a0d589ee53c758d28b8e3d727d1c",
+      "ticks_per_quarter": 384,
+      "metadata": [
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('time_signature', numerator=2, denominator=4, clocks_per_click=18, notated_32nd_notes_per_beat=8, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('set_tempo', tempo=1000000, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Am', time=0)"
+        },
+        {
+          "beat": 47.99999999999999,
+          "message": "MetaMessage('key_signature', key='A', time=0)"
+        },
+        {
+          "beat": 128.0,
+          "message": "MetaMessage('key_signature', key='Am', time=0)"
+        },
+        {
+          "beat": 175.99999999999991,
+          "message": "MetaMessage('key_signature', key='A', time=0)"
+        },
+        {
+          "beat": 48.0,
+          "message": "MetaMessage('key_signature', key='A', time=33)"
+        },
+        {
+          "beat": 128.0000000000001,
+          "message": "MetaMessage('key_signature', key='Am', time=0)"
+        },
+        {
+          "beat": 176.0000000000001,
+          "message": "MetaMessage('key_signature', key='A', time=33)"
+        }
+      ],
+      "source_end_beat": 254.99999999999824
+    },
+    "score_license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "typesetter/arranger": "Rune Zedeler and Chris Sawer",
+    "source_file": "_downloads/audio/sources/KV331_3_RondoAllaTurca.mid",
+    "sha256": "c14299cbdd34c8b2081da84dc06519ef8a52a0d589ee53c758d28b8e3d727d1c",
+    "sources": [
+      {
+        "file": "_downloads/audio/sources/KV331_3_RondoAllaTurca.mid",
+        "sha256": "c14299cbdd34c8b2081da84dc06519ef8a52a0d589ee53c758d28b8e3d727d1c"
+      }
+    ],
+    "soundfont": {
+      "file": "_downloads/audio/MuseScore_General.sf2",
+      "sha256": "ee51d2c4b1525e70f19a45909c4fd7a2e26d91d115fa89dbf5a6bc413d8b9bf3",
+      "license": "MIT",
+      "complete_notices": "# MuseScore_General.sf2\n---\n\nCurrent version: 0.2  13th May 2020\n\nThis is a scaled-down version of **MuseScore_General-HQ.sf2** that replaces some of the larger instruments to save memory and CPU on older PCs. This SoundFont is currently a work-in-progress. Detailed information on presets and sample sources used can be found in \"MuseScore_General_Sample_Sources.csv\". All instruments without attribution are still using samples from FluidR3Mono.\n\nFluidR3 (original version) by Frank Wen Copyright (c) 2000-02\n\nMono conversion (FluidR3Mono) by Michael Cowgill Copyright (c) 2014-17\n\nAdaptation for MuseScore_General.sf2 by S. Christian Collins Copyright (c) 2018-19\n\nTemple Blocks instrument provided by Ethan Winer Copyright (c) 2002\n\nDrumline Cymbals provided by Michael Schorsch Copyright (c) 2016\n\nMuseScore_General.sf2 is shared under the MIT license as described in COPYING, as was FluidR3Mono and FluidR3 before it.\n\nThe COPYING and README files from the original FluidR3GM file are now displayed here for reference.\n\nThe acknowledgements and copyright notices above must be included in any derivative work.\n\n\nREADME\n---\n\nFluid (R3) SoundFont\n\nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nI hereby release Fluid under the MIT license, as described in COPYING.\n\n\nThanks to Toby Smithe for helping to get Fluid included in Ubuntu.\n\nThis package, of course, is the original Release 3 of Fluid.  \n\n\nFluid was constructed in part from samples found in the public domain that I\nedited/cleaned/remixed/programmed and largely from recordings of my own and\nin conjunction with the people below who helped along the way:\n\nSuren M. Seron\nScott Hanan\nSteve Aupperle\nChris Gillman\nAlex Taubr\nChris Prola\nAndrew Klenk\nWinfried Hubbe \nDylan\nTim\nGort\nUros Katic \nEthan Winer (http://www.ethanwiner.com) \n\n\nIt's obviously been a few years since the project, but its nice to see that\npeople are still enjoying my work and getting good use out of it.  As always,\nI'd like to hear some work done with Fluid so email me, or just email me to\nsay hello and tell me what is going on in the computer musician world.\nWho knows, maybe I'll kick start this project again? ;)\n\n\nCOPYING\n---\n\nMono version:  Copyright (c) 2014-16 Michael Cowgill \nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the \"Software\"), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\n"
+    },
+    "audience": "Theater reactions only; no audience audio"
+  },
+  "tchaikovsky-sugar-plum": {
+    "composer": "Pyotr Ilyich Tchaikovsky",
+    "work": "Dance of the Sugar Plum Fairy — The Nutcracker, Op. 71, No. 14 var. 2 / Suite Op. 71a No. 3",
+    "score": "IMSLP PMLP3607-Sugarplum.mid (The Nutcracker page)",
+    "typesetter": "Charles A. Johnson (2023)",
+    "arranger": "Charles A. Johnson (2023)",
+    "attribution": "Dance of the Sugar Plum Fairy, Pyotr Ilyich Tchaikovsky; arrangement for 4 flutes + alto flute by Charles A. Johnson (2023), IMSLP (Nutcracker page, uploader Clsmaestro), license Creative Commons Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+    "score_license": "Creative Commons Attribution 4.0",
+    "score_license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "audio_license": "CC BY 4.0",
+    "audio_license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "changes": "re-orchestrated for celesta, pizzicato strings and bass clarinet; tempo/dynamics; comic edits",
+    "score_url": "https://imslp.org/wiki/File:PMLP3607-Sugarplum.mid",
+    "line": {
+      "zh": "乐谱 IMSLP · Charles A. Johnson 改编",
+      "en": "Score: IMSLP · arr. Charles A. Johnson"
+    },
+    "source": {
+      "file": "_downloads/audio/sources/PMLP3607-Sugarplum.mid",
+      "sha256": "3282e2f3c08001b96451022c5ce1471ea8527b56d25a9ff4c42cdc61e9c4bb2c",
+      "ticks_per_quarter": 960,
+      "metadata": [
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('time_signature', numerator=4, denominator=4, clocks_per_click=24, notated_32nd_notes_per_beat=8, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='G', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('set_tempo', tempo=500000, time=0)"
+        }
+      ],
+      "source_end_beat": 191.5
+    },
+    "typesetter/arranger": "Charles A. Johnson (2023)",
+    "source_file": "_downloads/audio/sources/PMLP3607-Sugarplum.mid",
+    "sha256": "3282e2f3c08001b96451022c5ce1471ea8527b56d25a9ff4c42cdc61e9c4bb2c",
+    "sources": [
+      {
+        "file": "_downloads/audio/sources/PMLP3607-Sugarplum.mid",
+        "sha256": "3282e2f3c08001b96451022c5ce1471ea8527b56d25a9ff4c42cdc61e9c4bb2c"
+      }
+    ],
+    "soundfont": {
+      "file": "_downloads/audio/MuseScore_General.sf2",
+      "sha256": "ee51d2c4b1525e70f19a45909c4fd7a2e26d91d115fa89dbf5a6bc413d8b9bf3",
+      "license": "MIT",
+      "complete_notices": "# MuseScore_General.sf2\n---\n\nCurrent version: 0.2  13th May 2020\n\nThis is a scaled-down version of **MuseScore_General-HQ.sf2** that replaces some of the larger instruments to save memory and CPU on older PCs. This SoundFont is currently a work-in-progress. Detailed information on presets and sample sources used can be found in \"MuseScore_General_Sample_Sources.csv\". All instruments without attribution are still using samples from FluidR3Mono.\n\nFluidR3 (original version) by Frank Wen Copyright (c) 2000-02\n\nMono conversion (FluidR3Mono) by Michael Cowgill Copyright (c) 2014-17\n\nAdaptation for MuseScore_General.sf2 by S. Christian Collins Copyright (c) 2018-19\n\nTemple Blocks instrument provided by Ethan Winer Copyright (c) 2002\n\nDrumline Cymbals provided by Michael Schorsch Copyright (c) 2016\n\nMuseScore_General.sf2 is shared under the MIT license as described in COPYING, as was FluidR3Mono and FluidR3 before it.\n\nThe COPYING and README files from the original FluidR3GM file are now displayed here for reference.\n\nThe acknowledgements and copyright notices above must be included in any derivative work.\n\n\nREADME\n---\n\nFluid (R3) SoundFont\n\nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nI hereby release Fluid under the MIT license, as described in COPYING.\n\n\nThanks to Toby Smithe for helping to get Fluid included in Ubuntu.\n\nThis package, of course, is the original Release 3 of Fluid.  \n\n\nFluid was constructed in part from samples found in the public domain that I\nedited/cleaned/remixed/programmed and largely from recordings of my own and\nin conjunction with the people below who helped along the way:\n\nSuren M. Seron\nScott Hanan\nSteve Aupperle\nChris Gillman\nAlex Taubr\nChris Prola\nAndrew Klenk\nWinfried Hubbe \nDylan\nTim\nGort\nUros Katic \nEthan Winer (http://www.ethanwiner.com) \n\n\nIt's obviously been a few years since the project, but its nice to see that\npeople are still enjoying my work and getting good use out of it.  As always,\nI'd like to hear some work done with Fluid so email me, or just email me to\nsay hello and tell me what is going on in the computer musician world.\nWho knows, maybe I'll kick start this project again? ;)\n\n\nCOPYING\n---\n\nMono version:  Copyright (c) 2014-16 Michael Cowgill \nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the \"Software\"), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\n"
+    },
+    "audience": "Theater reactions only; no audience audio"
+  },
+  "tchaikovsky-swan-lake": {
+    "composer": "Pyotr Ilyich Tchaikovsky",
+    "work": "Swan Lake, Op. 20, Act II No. 10 Scene — verified four-bar theme arrangement",
+    "score": "Public-domain composition; theme arranged for this game",
+    "typesetter": "Tonight Out contributors",
+    "score_license": "Public Domain",
+    "score_license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "audio_license": "CC0-1.0",
+    "audio_license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": "Only verified four-bar phrase repeated three times with expanding orchestration; i–i–VI–i harmony, octave violins/horns, sustained cello harmony tones, B-minor cadence; oboe comedy bends and synthesized swan. Full denotes this arrangement, not the complete movement.",
+    "line": {
+      "zh": "本作编配",
+      "en": "Arranged for this game"
+    },
+    "source": {
+      "file": "tools/audio/midi/tchaikovsky-swan-lake-perfect.mid",
+      "sha256": "48a9473bc894e61df7f896eed79d0f6b5a39ad7ec5af7a61cd3d3fbd4add50dc",
+      "ticks_per_quarter": 960,
+      "metadata": [
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('set_tempo', tempo=500000, time=0)"
+        }
+      ],
+      "source_end_beat": 18.22500000000002
+    },
+    "typesetter/arranger": "Tonight Out contributors",
+    "source_file": "tools/audio/midi/tchaikovsky-swan-lake-perfect.mid",
+    "sha256": "48a9473bc894e61df7f896eed79d0f6b5a39ad7ec5af7a61cd3d3fbd4add50dc",
+    "sources": [
+      {
+        "file": "tools/audio/midi/tchaikovsky-swan-lake-perfect.mid",
+        "sha256": "48a9473bc894e61df7f896eed79d0f6b5a39ad7ec5af7a61cd3d3fbd4add50dc"
+      }
+    ],
+    "soundfont": {
+      "file": "_downloads/audio/MuseScore_General.sf2",
+      "sha256": "ee51d2c4b1525e70f19a45909c4fd7a2e26d91d115fa89dbf5a6bc413d8b9bf3",
+      "license": "MIT",
+      "complete_notices": "# MuseScore_General.sf2\n---\n\nCurrent version: 0.2  13th May 2020\n\nThis is a scaled-down version of **MuseScore_General-HQ.sf2** that replaces some of the larger instruments to save memory and CPU on older PCs. This SoundFont is currently a work-in-progress. Detailed information on presets and sample sources used can be found in \"MuseScore_General_Sample_Sources.csv\". All instruments without attribution are still using samples from FluidR3Mono.\n\nFluidR3 (original version) by Frank Wen Copyright (c) 2000-02\n\nMono conversion (FluidR3Mono) by Michael Cowgill Copyright (c) 2014-17\n\nAdaptation for MuseScore_General.sf2 by S. Christian Collins Copyright (c) 2018-19\n\nTemple Blocks instrument provided by Ethan Winer Copyright (c) 2002\n\nDrumline Cymbals provided by Michael Schorsch Copyright (c) 2016\n\nMuseScore_General.sf2 is shared under the MIT license as described in COPYING, as was FluidR3Mono and FluidR3 before it.\n\nThe COPYING and README files from the original FluidR3GM file are now displayed here for reference.\n\nThe acknowledgements and copyright notices above must be included in any derivative work.\n\n\nREADME\n---\n\nFluid (R3) SoundFont\n\nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nI hereby release Fluid under the MIT license, as described in COPYING.\n\n\nThanks to Toby Smithe for helping to get Fluid included in Ubuntu.\n\nThis package, of course, is the original Release 3 of Fluid.  \n\n\nFluid was constructed in part from samples found in the public domain that I\nedited/cleaned/remixed/programmed and largely from recordings of my own and\nin conjunction with the people below who helped along the way:\n\nSuren M. Seron\nScott Hanan\nSteve Aupperle\nChris Gillman\nAlex Taubr\nChris Prola\nAndrew Klenk\nWinfried Hubbe \nDylan\nTim\nGort\nUros Katic \nEthan Winer (http://www.ethanwiner.com) \n\n\nIt's obviously been a few years since the project, but its nice to see that\npeople are still enjoying my work and getting good use out of it.  As always,\nI'd like to hear some work done with Fluid so email me, or just email me to\nsay hello and tell me what is going on in the computer musician world.\nWho knows, maybe I'll kick start this project again? ;)\n\n\nCOPYING\n---\n\nMono version:  Copyright (c) 2014-16 Michael Cowgill \nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the \"Software\"), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\n"
+    },
+    "audience": "Theater reactions only; no audience audio"
+  },
+  "vivaldi-spring": {
     "composer": "Antonio Vivaldi",
     "work": "La Primavera / Spring, Op. 8 No. 1, RV 269, movement I Allegro",
     "score": "Mutopia-2010/02/08-301",
@@ -82,30 +676,97 @@
     "attribution": "Antonio Vivaldi — Spring, movement I; score typeset by Anonymous, Mutopia-2010/02/08-301; pilot adaptation by Singer Game contributors (2026).",
     "share_alike": "ALL vivaldi-spring-*.mp3 files, their cue JSON, performance plans and the Spring portions of the timeline are released under CC BY-SA 3.0. Adaptations must retain attribution, indicate changes, and be distributed under CC BY-SA 3.0 or a license permitted by its ShareAlike terms.",
     "changes": "Tempo quarter=104, expressive articulation/dynamics, score-indicated trills and mordents realized, existing score cello retained. Concert shortens birdsong repetitions. Accident abbreviates opening/closing ritornelli and pairs the score violin gestures with an original NumPy songbird whistle synthesis: curious contact calls, curved answers about two octaves higher, FM warbles, accelerating rising AM trills, cadence tweets and a flight call. Its original violin/orchestra notes and timing are preserved. Wreck changes solo timing and pitch; orchestra retains score pitches.",
-    "filename_correction": "spring-score-1.mid is the Largo (3/4, quarter=50, C-sharp minor); spring-score.mid is the Allegro (4/4, quarter=115 in source, E major), verified against spring1.ly."
+    "filename_correction": "spring-score-1.mid is the Largo (3/4, quarter=50, C-sharp minor); spring-score.mid is the Allegro (4/4, quarter=115 in source, E major), verified against spring1.ly.",
+    "score_url": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=301",
+    "line": {
+      "zh": "乐谱 Mutopia（匿名录入）",
+      "en": "Score: Mutopia (anonymous)"
+    },
+    "score_license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "typesetter/arranger": "Anonymous",
+    "source_file": "_downloads/audio/sources/spring/spring-score.mid",
+    "sha256": "9f9eaaaac0f1a6b0e1a9af86ff2ff65a0ff786dd4fa8d8b8eda19f8d564e35e0",
+    "sources": [
+      {
+        "file": "_downloads/audio/sources/spring/spring-score.mid",
+        "sha256": "9f9eaaaac0f1a6b0e1a9af86ff2ff65a0ff786dd4fa8d8b8eda19f8d564e35e0"
+      }
+    ],
+    "soundfont": {
+      "file": "_downloads/audio/MuseScore_General.sf2",
+      "sha256": "ee51d2c4b1525e70f19a45909c4fd7a2e26d91d115fa89dbf5a6bc413d8b9bf3",
+      "license": "MIT",
+      "complete_notices": "# MuseScore_General.sf2\n---\n\nCurrent version: 0.2  13th May 2020\n\nThis is a scaled-down version of **MuseScore_General-HQ.sf2** that replaces some of the larger instruments to save memory and CPU on older PCs. This SoundFont is currently a work-in-progress. Detailed information on presets and sample sources used can be found in \"MuseScore_General_Sample_Sources.csv\". All instruments without attribution are still using samples from FluidR3Mono.\n\nFluidR3 (original version) by Frank Wen Copyright (c) 2000-02\n\nMono conversion (FluidR3Mono) by Michael Cowgill Copyright (c) 2014-17\n\nAdaptation for MuseScore_General.sf2 by S. Christian Collins Copyright (c) 2018-19\n\nTemple Blocks instrument provided by Ethan Winer Copyright (c) 2002\n\nDrumline Cymbals provided by Michael Schorsch Copyright (c) 2016\n\nMuseScore_General.sf2 is shared under the MIT license as described in COPYING, as was FluidR3Mono and FluidR3 before it.\n\nThe COPYING and README files from the original FluidR3GM file are now displayed here for reference.\n\nThe acknowledgements and copyright notices above must be included in any derivative work.\n\n\nREADME\n---\n\nFluid (R3) SoundFont\n\nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nI hereby release Fluid under the MIT license, as described in COPYING.\n\n\nThanks to Toby Smithe for helping to get Fluid included in Ubuntu.\n\nThis package, of course, is the original Release 3 of Fluid.  \n\n\nFluid was constructed in part from samples found in the public domain that I\nedited/cleaned/remixed/programmed and largely from recordings of my own and\nin conjunction with the people below who helped along the way:\n\nSuren M. Seron\nScott Hanan\nSteve Aupperle\nChris Gillman\nAlex Taubr\nChris Prola\nAndrew Klenk\nWinfried Hubbe \nDylan\nTim\nGort\nUros Katic \nEthan Winer (http://www.ethanwiner.com) \n\n\nIt's obviously been a few years since the project, but its nice to see that\npeople are still enjoying my work and getting good use out of it.  As always,\nI'd like to hear some work done with Fluid so email me, or just email me to\nsay hello and tell me what is going on in the computer musician world.\nWho knows, maybe I'll kick start this project again? ;)\n\n\nCOPYING\n---\n\nMono version:  Copyright (c) 2014-16 Michael Cowgill \nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the \"Software\"), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\n"
+    },
+    "audience": "Theater reactions only; no audience audio"
   },
-  "soundfont": {
-    "file": "_downloads/audio/MuseScore_General.sf2",
-    "sha256": "ee51d2c4b1525e70f19a45909c4fd7a2e26d91d115fa89dbf5a6bc413d8b9bf3",
-    "name": "MuseScore_General 0.2",
-    "license": "MIT",
-    "complete_notices": "# MuseScore_General.sf2\n---\n\nCurrent version: 0.2  13th May 2020\n\nThis is a scaled-down version of **MuseScore_General-HQ.sf2** that replaces some of the larger instruments to save memory and CPU on older PCs. This SoundFont is currently a work-in-progress. Detailed information on presets and sample sources used can be found in \"MuseScore_General_Sample_Sources.csv\". All instruments without attribution are still using samples from FluidR3Mono.\n\nFluidR3 (original version) by Frank Wen Copyright (c) 2000-02\n\nMono conversion (FluidR3Mono) by Michael Cowgill Copyright (c) 2014-17\n\nAdaptation for MuseScore_General.sf2 by S. Christian Collins Copyright (c) 2018-19\n\nTemple Blocks instrument provided by Ethan Winer Copyright (c) 2002\n\nDrumline Cymbals provided by Michael Schorsch Copyright (c) 2016\n\nMuseScore_General.sf2 is shared under the MIT license as described in COPYING, as was FluidR3Mono and FluidR3 before it.\n\nThe COPYING and README files from the original FluidR3GM file are now displayed here for reference.\n\nThe acknowledgements and copyright notices above must be included in any derivative work.\n\n\nREADME\n---\n\nFluid (R3) SoundFont\n\nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nI hereby release Fluid under the MIT license, as described in COPYING.\n\n\nThanks to Toby Smithe for helping to get Fluid included in Ubuntu.\n\nThis package, of course, is the original Release 3 of Fluid.  \n\n\nFluid was constructed in part from samples found in the public domain that I\nedited/cleaned/remixed/programmed and largely from recordings of my own and\nin conjunction with the people below who helped along the way:\n\nSuren M. Seron\nScott Hanan\nSteve Aupperle\nChris Gillman\nAlex Taubr\nChris Prola\nAndrew Klenk\nWinfried Hubbe \nDylan\nTim\nGort\nUros Katic \nEthan Winer (http://www.ethanwiner.com) \n\n\nIt's obviously been a few years since the project, but its nice to see that\npeople are still enjoying my work and getting good use out of it.  As always,\nI'd like to hear some work done with Fluid so email me, or just email me to\nsay hello and tell me what is going on in the computer musician world.\nWho knows, maybe I'll kick start this project again? ;)\n\n\nCOPYING\n---\n\nMono version:  Copyright (c) 2014-16 Michael Cowgill \nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the \"Software\"), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\n",
-    "presets_0_based": {
-      "0": "Grand Piano",
-      "40": "Violin",
-      "41": "Viola",
-      "42": "Cello",
-      "48": "String Ensemble 1"
-    }
-  },
-  "bird": {
-    "clip": "vivaldi-spring-accident",
-    "creator": "Singer Game contributors (2026)",
-    "source": "Original NumPy synthesis; no recordings, Bird Tweet or piccolo preset.",
-    "synthesis": "Nearly pure whistle, weak second/third harmonics (-18/-30 dB), rapid sweeps, 10–20 Hz FM, accelerating 19–29 Hz AM trills, quiet band-passed breath, 1–4 ms attacks and exponential decay.",
-    "placement": "Slightly right (pan +0.28); 1.8% early reflection. Peak -6 dB relative to the geometric mean of the two isolated duel violin gesture peaks, before shared mastering (within -4 to -8 dB of each gesture).",
-    "license": "CC BY-SA 3.0 Unported as part of the Spring adaptation"
-  },
-  "audience": "Laugh, gasp and cheer events are theater reactions only; no recorded/synthetic audience effects are mixed into MP3s.",
-  "software": "New pilot scripts: MIT. Score-derived Spring data and audio: CC BY-SA 3.0, not CC0."
+  "vivaldi-winter": {
+    "composer": "Antonio Vivaldi",
+    "work": "L’Inverno / Winter, Op. 8 No. 4, RV 297, movement I Allegro non molto",
+    "score": "Mutopia-2010/02/08-351",
+    "typesetter": "Anonymous (Mutopia maintainer smailliw)",
+    "score_license": "CC BY-SA 3.0 Unported",
+    "score_license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "audio_license": "CC BY-SA 3.0 Unported",
+    "attribution": "Antonio Vivaldi — Winter RV 297, movement I; Anonymous / Mutopia Project; Singer Game contributors (2026) adaptation.",
+    "share_alike": "All Winter audio, derived cue JSON, performance plans and review figures are CC BY-SA 3.0 Unported; retain attribution, changes and ShareAlike.",
+    "changes": "Quarter=140; expressive string articulation/dynamics, compact concert edit preserving shivering opening and solo outbursts plus original closing cadence; synthesized pitch-bend shivering and ice-slip adaptations.",
+    "score_url": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=351",
+    "line": {
+      "zh": "乐谱 Mutopia（匿名录入）",
+      "en": "Score: Mutopia (anonymous)"
+    },
+    "source": {
+      "file": "_downloads/audio/sources/winter/winter-score.mid",
+      "sha256": "4265d2320e01e8eb4934d7dd4a798c91e9a98bca58b35b9bd5c8db986a57e093",
+      "ticks_per_quarter": 384,
+      "metadata": [
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('time_signature', numerator=4, denominator=4, clocks_per_click=18, notated_32nd_notes_per_beat=8, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('set_tempo', tempo=428571, time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Fm', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Fm', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Fm', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Fm', time=0)"
+        },
+        {
+          "beat": 0.0,
+          "message": "MetaMessage('key_signature', key='Fm', time=0)"
+        }
+      ],
+      "source_end_beat": 252.0
+    },
+    "typesetter/arranger": "Anonymous (Mutopia maintainer smailliw)",
+    "source_file": "_downloads/audio/sources/winter/winter-score.mid",
+    "sha256": "4265d2320e01e8eb4934d7dd4a798c91e9a98bca58b35b9bd5c8db986a57e093",
+    "sources": [
+      {
+        "file": "_downloads/audio/sources/winter/winter-score.mid",
+        "sha256": "4265d2320e01e8eb4934d7dd4a798c91e9a98bca58b35b9bd5c8db986a57e093"
+      }
+    ],
+    "soundfont": {
+      "file": "_downloads/audio/MuseScore_General.sf2",
+      "sha256": "ee51d2c4b1525e70f19a45909c4fd7a2e26d91d115fa89dbf5a6bc413d8b9bf3",
+      "license": "MIT",
+      "complete_notices": "# MuseScore_General.sf2\n---\n\nCurrent version: 0.2  13th May 2020\n\nThis is a scaled-down version of **MuseScore_General-HQ.sf2** that replaces some of the larger instruments to save memory and CPU on older PCs. This SoundFont is currently a work-in-progress. Detailed information on presets and sample sources used can be found in \"MuseScore_General_Sample_Sources.csv\". All instruments without attribution are still using samples from FluidR3Mono.\n\nFluidR3 (original version) by Frank Wen Copyright (c) 2000-02\n\nMono conversion (FluidR3Mono) by Michael Cowgill Copyright (c) 2014-17\n\nAdaptation for MuseScore_General.sf2 by S. Christian Collins Copyright (c) 2018-19\n\nTemple Blocks instrument provided by Ethan Winer Copyright (c) 2002\n\nDrumline Cymbals provided by Michael Schorsch Copyright (c) 2016\n\nMuseScore_General.sf2 is shared under the MIT license as described in COPYING, as was FluidR3Mono and FluidR3 before it.\n\nThe COPYING and README files from the original FluidR3GM file are now displayed here for reference.\n\nThe acknowledgements and copyright notices above must be included in any derivative work.\n\n\nREADME\n---\n\nFluid (R3) SoundFont\n\nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nI hereby release Fluid under the MIT license, as described in COPYING.\n\n\nThanks to Toby Smithe for helping to get Fluid included in Ubuntu.\n\nThis package, of course, is the original Release 3 of Fluid.  \n\n\nFluid was constructed in part from samples found in the public domain that I\nedited/cleaned/remixed/programmed and largely from recordings of my own and\nin conjunction with the people below who helped along the way:\n\nSuren M. Seron\nScott Hanan\nSteve Aupperle\nChris Gillman\nAlex Taubr\nChris Prola\nAndrew Klenk\nWinfried Hubbe \nDylan\nTim\nGort\nUros Katic \nEthan Winer (http://www.ethanwiner.com) \n\n\nIt's obviously been a few years since the project, but its nice to see that\npeople are still enjoying my work and getting good use out of it.  As always,\nI'd like to hear some work done with Fluid so email me, or just email me to\nsay hello and tell me what is going on in the computer musician world.\nWho knows, maybe I'll kick start this project again? ;)\n\n\nCOPYING\n---\n\nMono version:  Copyright (c) 2014-16 Michael Cowgill \nCopyright (c) 2000-2002, 2008 Frank Wen <getfrank@gmail.com>\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the \"Software\"), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\n"
+    },
+    "audience": "Theater reactions only; no audience audio"
+  }
 }
