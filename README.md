@@ -20,7 +20,7 @@ Under the comedy is an exactly solved 3v3 bluffing game: the lowest score is out
 
 | 难度 / Tier | 对手 / Rival | 风格 / Play |
 |---|---|---|
-| 新人 / Rookie | 愣头青 / Hothead | 爱先出最高分，偶尔乱出 / Burns high levels early; sometimes plays randomly |
+| 普通 / Normal | 票友 / Amateur | 正常水平，偶尔失手 / Plays sensibly, slips now and then. |
 | 职业 / Pro | 教科书 / Textbook | 完美策略对手，打平就是高手 / Plays perfectly. A draw is a win. |
 | 魔王 / Boss | 读心评委 / Mind Reader | 以纳什策略为底，记住并克制你的习惯 / Starts from Nash, learns your habits and counters them |
 
