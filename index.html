@@ -645,7 +645,12 @@ html[data-frame-landscape=true], html[data-frame-landscape=true] body { overflow
 .home-badge{font:700 10px var(--body);color:var(--brass);white-space:nowrap;margin-left:5px}
 .banner small,.opening-review small{display:block;font:11px var(--body);line-height:1.3;margin-top:3px}
 .level-mark.boosted{color:var(--brass)!important;outline:1px solid var(--brass);border-radius:3px}
-button.level-mark{padding:0;min-width:18px;border:0;background:transparent;cursor:pointer;font:inherit}
+/* Opening boost: the reel slot becomes five large song chips (the wheels are idle until round 1). */
+.boost-pick{height:122px;display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:6px;padding:6px;border:1px solid var(--brass);border-radius:9px;background:linear-gradient(180deg,#100308,#4b2b1b 48%,#100308);box-shadow:inset 0 1px 8px #0008}
+.boost-chip{width:calc((100% - 12px) / 3);height:48px;padding:0;display:grid;place-items:center;align-content:center;border:1px solid var(--brass-line);border-radius:8px;background:var(--brass-soft);color:var(--cream);font:700 21px/1 var(--digits,var(--body));cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.boost-chip small{font-size:11px;line-height:1;color:inherit;margin-top:2px}
+.boost-chip.on{background:var(--brass);border-color:var(--brass);color:var(--curtain);box-shadow:0 0 12px var(--brass-soft)}
+.boost-chip:active{transform:scale(.94)}
 .tie-options{display:flex;gap:3px;justify-content:center;margin-top:4px}
 .tie-options button{flex:1;padding:3px 2px;background:var(--shade);border:1px solid var(--brass);color:var(--ink);font:11px var(--body);border-radius:4px;min-height:34px}
 #game[data-phase="boost"] .quick,#game[data-phase="boost-reveal"] .quick,#game[data-phase="tie-choice"] .quick{visibility:hidden}
@@ -2458,11 +2463,17 @@ function rootMix(root,mode,hands){
 }
 const rootLoaded=(h,a)=>!!TABLE||roots.has(rootKey(h,a));
 function useRoot(h,a){if(TABLE)return TABLE;const root=roots.get(rootKey(h,a));if(!root)throw Error('Strategy root not loaded');ACTIVE_ROOT=root;return root;}
+// A stalled mobile connection must fail (and offer Retry) instead of hanging the game.
+async function timed(ms,run){
+ const ctl=typeof AbortController==='function'?new AbortController():null;let timer;
+ const limit=new Promise((_,reject)=>{timer=setTimeout(()=>{ctl?.abort();reject(Error('Strategy load timeout'));},ms);});
+ try{return await Promise.race([run(ctl?.signal),limit]);}finally{clearTimeout(timer);}
+}
 async function fetchRoot(url){
  if(typeof DecompressionStream==='function'){
-  try{const r=await fetch(url+'.bin.gz');if(!r.ok)throw Error('Strategy load '+r.status);return decodeRoot(await new Response(r.body.pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());}catch(_){/* Plain JSON also works without native gzip support. */}
+  try{return await timed(8000,async signal=>{const r=await fetch(url+'.bin.gz',{signal});if(!r.ok)throw Error('Strategy load '+r.status);return decodeRoot(await new Response(r.body.pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());});}catch(_){/* Plain JSON also works without native gzip support. */}
  }
- const r=await fetch(url+'.json');if(!r.ok)throw Error('Strategy load '+r.status);return decodeRoot(await r.json());
+ return timed(15000,async signal=>{const r=await fetch(url+'.json',{signal});if(!r.ok)throw Error('Strategy load '+r.status);return decodeRoot(await r.json());});
 }
 function loadRoot(h,a,base='strategy-roots'){
  const key=rootKey(h,a);if(TABLE)return Promise.resolve(TABLE);
@@ -3529,12 +3540,12 @@ if(typeof module!=='undefined')module.exports=api;else G.SingerAI=api;
       <div class="level-status" role="group" aria-label="${attr(t('reel.levels'))}">${(s.initial||[1,2,3,4,5]).map((c,i,list)=>{
         const count=list.slice(i).filter(x=>x===c).length,used=(S.spin?S.revealLevels?.[s.id]||cardsOf(s.mask):cardsOf(s.mask)).filter(x=>x===c).length<count;
         const marked=s.boost&&c===s.boost+1&&i===list.lastIndexOf(c),selected=S.boostPick?.idx===S.you.indexOf(s)&&S.boostPick?.card===c;
-        return own&&S.phase==='boost'?`<button class="level-mark remaining ${selected?'boosted':''}" data-boost-id="${s.id}" data-boost-card="${c}" aria-label="${attr(name+' '+c+'→'+(c+1))}" aria-pressed="${selected}">${c}</button>`:`<span class="level-mark ${used?'used':'remaining'} ${marked?'boosted':''}" role="img" aria-label="${attr(name+' '+c+(marked?' +1':''))}">${used?`<s>${c}</s>`:c}</span>`;
+        return `<span class="level-mark ${used?'used':'remaining'} ${marked||selected?'boosted':''}" role="img" aria-label="${attr(name+' '+c+(marked?' +1':''))}">${used?`<s>${c}</s>`:c}</span>`;
       }).join('')}</div>
       ${S.result?.kind==="done"&&(S.result.outIds||[S.outId]).includes(s.id)?`<button type="button" class="flop-peek" data-flop="${TM.clipId(s.ref,pieceOf(s).id,TM.kindForScore(S.result.low))}" aria-label="${attr(t('mvp.replay'))}">🎭</button>`:""}
-      <div id="reel-${s.id}" class="reel${editable?' editable':' locked'}${editable&&new Set(levels).size===1?' fixed':''}${spinning?' spinning':''}${S.spinFrame?' qa-spin':''}" data-reel="${s.id}" data-start="${spinning?(own?S.pick[s.id]:""):value??""}" data-target="${value??""}" data-spin="${spinning}" data-freeze="${!!S.spinFrame}" data-delay="${idx*75}" ${attrs}>
+      ${own&&S.phase==='boost'?`<div class="boost-pick" role="group" aria-label="${attr(name+' +1')}">${[1,2,3,4,5].map(c=>{const on=S.boostPick?.idx===S.you.indexOf(s)&&S.boostPick?.card===c;return `<button type="button" class="boost-chip${on?' on':''}" data-boost-id="${s.id}" data-boost-card="${c}" aria-pressed="${on}" aria-label="${attr(name+' '+c+'→'+(c+1))}">${on?`${c}<small>→${c+1}</small>`:c}</button>`;}).join('')}</div>`:`<div id="reel-${s.id}" class="reel${editable?' editable':' locked'}${editable&&new Set(levels).size===1?' fixed':''}${spinning?' spinning':''}${S.spinFrame?' qa-spin':''}" data-reel="${s.id}" data-start="${spinning?(own?S.pick[s.id]:""):value??""}" data-target="${value??""}" data-spin="${spinning}" data-freeze="${!!S.spinFrame}" data-delay="${idx*75}" ${attrs}>
         <div class="reel-scroll" tabindex="-1"><div class="reel-items" aria-hidden="true">${items.map(c=>`<div class="wheel-item" data-wheel-value="${c??""}"><span class="wheel-digit">${c??"?"}</span></div>`).join("")}</div></div><div class="reel-frame" aria-hidden="true"></div>
-      </div>
+      </div>`}
     </div>`;
   }
   function paintLanes() {
