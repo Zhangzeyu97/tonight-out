@@ -1,8 +1,8 @@
 # 今晚谁出局 · Who's Out Tonight
 
-古典大师也会翻车：贝多芬卡在《致爱丽丝》的两个音里，莫扎特越弹越慌，维瓦尔第被不速之客抢了舞台。翻车剧场用公有领域古典作品的乐谱合成演奏，把卡壳、跑调、加速和喜剧停顿直接写进音乐；肖像、字幕与舞台反应同步上演。每段完整演出都能存成带声音的竖屏视频。**[打开就能玩](https://zhangzeyu97.github.io/tonight-out/)**，中英双语。
+古典大师也会翻车：贝多芬卡在《致爱丽丝》的两个音里，莫扎特越弹越慌，维瓦尔第被不速之客抢了舞台。翻车剧场用公有领域古典作品的乐谱合成演奏，把卡壳、跑调、加速和喜剧停顿直接写进音乐；肖像、字幕与舞台反应同步上演。每段完整演出都能存成带声音的竖屏视频。**[打开就能玩](https://zeyuniverse.github.io/tonight-out/)**，中英双语。
 
-Classical maestros flop live: Beethoven gets stuck in Für Elise, Mozart panics, and an unexpected guest steals Vivaldi's stage. The flop theater synthesizes performances from scores of public-domain classical works, with comic timing built into the music: wrong notes, runaway tempos, and awkward pauses. Portraits, captions, and stage reactions follow the performance. Save a full clip as a vertical video with sound. **[Play in your browser](https://zhangzeyu97.github.io/tonight-out/)** in Chinese or English.
+Classical maestros flop live: Beethoven gets stuck in Für Elise, Mozart panics, and an unexpected guest steals Vivaldi's stage. The flop theater synthesizes performances from scores of public-domain classical works, with comic timing built into the music: wrong notes, runaway tempos, and awkward pauses. Portraits, captions, and stage reactions follow the performance. Save a full clip as a vertical video with sound. **[Play in your browser](https://zeyuniverse.github.io/tonight-out/)** in Chinese or English.
 
 翻车背后是一个硬核的 3 对 3 心理博弈：每轮全场最低分出局，1–5 分各只能用一次。全部 **9,601 个局面**通过逆向归纳与线性规划（LP）精确求出纳什均衡。AI 在你行动前先锁定出招，公布 SHA-256 指纹；每一步都对照 AI 当轮真实的混合策略评级，揭晓后还能核对指纹。你在出招、猜招和抽签之间学习混合策略，而不是读公式。
 

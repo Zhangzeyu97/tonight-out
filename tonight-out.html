@@ -934,7 +934,7 @@ function selectMime(supported){return mimes.find(m=>supported(m))||null;}
 function capability({ua='',capture=false,recorder=false,mime=null,audio=true}){return !/MicroMessenger/i.test(ua)&&capture&&recorder&&audio&&!!mime;}
 function wrap(s,size,width,measure){const lines=[];let line='';for(const word of String(s).split(/(\s+|(?=[\u2e80-\u9fff])|(?<=[\u2e80-\u9fff]))/u).filter(Boolean)){if(measure(word,size)>width){for(const ch of word){if(line&&measure(line+ch,size)>width){lines.push(line.trim());line='';}line+=ch;}}else if(line&&measure(line+word,size)>width){lines.push(line.trim());line=word.trimStart();}else line+=word;}if(line.trim())lines.push(line.trim());return lines;}
 function fit(text,box,size,measure){let lines;for(;size>=4;size--){lines=wrap(text,size,box.w,measure);if(lines.length*size*1.25<=box.h)break;}return {...box,size,lines,lineHeight:size*1.25};}
-function layout({title,clip,caption='',credit='',url='zhangzeyu97.github.io/tonight-out'},measure){return {width:720,height:1280,stage:{x:0,y:224,w:720,h:900},title:fit(title,{x:36,y:30,w:648,h:72},46,measure),clip:fit(clip,{x:36,y:112,w:648,h:96},32,measure),caption:fit(caption,{x:36,y:964,w:648,h:140},38,measure),url:fit(url,{x:36,y:1148,w:648,h:30},20,measure),credit:fit(credit,{x:36,y:1192,w:648,h:68},12,measure)};}
+function layout({title,clip,caption='',credit='',url='zeyuniverse.github.io/tonight-out'},measure){return {width:720,height:1280,stage:{x:0,y:224,w:720,h:900},title:fit(title,{x:36,y:30,w:648,h:72},46,measure),clip:fit(clip,{x:36,y:112,w:648,h:96},32,measure),caption:fit(caption,{x:36,y:964,w:648,h:140},38,measure),url:fit(url,{x:36,y:1148,w:648,h:30},20,measure),credit:fit(credit,{x:36,y:1192,w:648,h:68},12,measure)};}
 const api={mimes,selectMime,capability,wrap,fit,layout};root.TheaterVideoModel=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);
 </script>
@@ -3137,7 +3137,7 @@ if(typeof module!=='undefined')module.exports=api;else G.SingerAI=api;
   }
   function dailyText(ds) {
     const r = dailyState().results[ds]; if (!r) return "";
-    return [t("daily.text", { n: dailyNo(ds) }), t("daily.line", { result: t(r.won ? "share.win" : "share.lose"), acc: r.acc + "%" }), r.squares, "zhangzeyu97.github.io/tonight-out"].join("\n");
+    return [t("daily.text", { n: dailyNo(ds) }), t("daily.line", { result: t(r.won ? "share.win" : "share.lose"), acc: r.acc + "%" }), r.squares, "zeyuniverse.github.io/tonight-out"].join("\n");
   }
   function recordDaily() {
     if (!S || !S.daily || S.dailyPractice) return;
@@ -3361,7 +3361,7 @@ if(typeof module!=='undefined')module.exports=api;else G.SingerAI=api;
         mvp: { img: portrait(m.ref, true), name: lname(m.ref), line: `${pieceOf(m).title[lang]} · ${t("lvl.5")}` },
         flop: f ? { img: portrait(f.s.ref, true), name: lname(f.s.ref), line: `${pieceOf(f.s).title[lang]} · ${flopText(f)}`, label: t("mvp.flopAward") } : null,
         stats: [S.daily ? t("share.daily", { n: dailyNo(S.daily), result }) : t("share.vs", { tier: t(L.tierKey), name: t(L.nameKey), result }), t("share.acc", { acc: accuracy() + "%" })],
-        footer: "zhangzeyu97.github.io/tonight-out", date: today() });
+        footer: "zeyuniverse.github.io/tonight-out", date: today() });
       if (!blob) return toast("share.unavailable");
       showShare(blob);
     } catch (e) { toast("share.unavailable"); }
