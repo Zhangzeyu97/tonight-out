@@ -662,6 +662,13 @@ html[data-frame-landscape=true], html[data-frame-landscape=true] body { overflow
 #game[data-phase="boost"] .banner,#game[data-phase="boost-reveal"] .banner{font-size:14px;line-height:18px}
 .level-mark.used.boosted{color:var(--ghost-ink)!important;outline-color:var(--line)}
 
+/* Anonymous logging preference stays inside the rules sheet. */
+.logging { display:flex; align-items:center; gap:12px; justify-content:space-between; margin-top:14px; color:var(--muted); font-size:.76rem; }
+.logging button { flex:none; width:36px; height:22px; border:1px solid var(--line); border-radius:99px; padding:2px; background:var(--shade); cursor:pointer; }
+.logging i { display:block; width:16px; height:16px; border-radius:50%; background:var(--muted); }
+.logging [aria-checked=true] { background:var(--you); }
+.logging [aria-checked=true] i { transform:translateX(14px); background:var(--curtain); }
+
 </style>
 
 <div class="wrap">
@@ -3092,6 +3099,59 @@ if(typeof module!=='undefined')module.exports=api;else G.SingerAI=api;
   };
 
   let S = null, ai = null, stable = null;
+  // ---------- anonymous telemetry ----------
+  const telemetry = (() => {
+    const KEY="tonight-out:outbox",OPT="tonight-out:logging",PID="tonight-out:pid",AGE=7*86400000,CLIENT="acbce0a4ef5e";
+    const loc=window.location||{},host=loc.hostname||"",local=["localhost","127.0.0.1","[::1]"].includes(host);
+    const qa=new URLSearchParams(loc.search||"").has("qa")||new URLSearchParams(loc.search||"").has("fixture");
+    const base=host==="zeyuniverse.dev"||host.endsWith(".zeyuniverse.dev")||local?"/api":"https://tonight-out.zeyuniverse.dev/api";
+    const validHost=!!host&&(!local||loc.port==="8787")&&loc.protocol!=="file:";
+    let enabled=true,pid=null,busy=false,queue=[];
+    const uuid=()=>{try{return crypto.randomUUID();}catch(_){return null;}};
+    const now=()=>{try{return performance.now();}catch(_){return Date.now();}};
+    const elapsed=start=>Math.max(0,Math.min(AGE,Math.round(now()-start)));
+    try{enabled=localStorage.getItem(OPT)!=="false";const p=localStorage.getItem(PID);if(/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(p||""))pid=p;}catch(_){}
+    const allowed=()=>enabled&&!qa&&validHost&&!S?.daily;
+    const trim=()=>{const time=Date.now();queue=queue.filter(r=>r&&typeof r.id==="string"&&["game","event"].includes(r.kind)&&Number.isFinite(r.at)&&r.at<=time&&time-r.at<=AGE&&r.body&&typeof r.body==="object").slice(-20);};
+    const persist=()=>{trim();try{localStorage.setItem(KEY,JSON.stringify(queue));}catch(_){};};
+    try{const saved=JSON.parse(localStorage.getItem(KEY)||"[]");if(Array.isArray(saved))queue=saved;}catch(_){}
+    if(!enabled)queue=[];persist();
+    function player(){if(!pid){pid=uuid();if(pid)try{localStorage.setItem(PID,pid);}catch(_){}}return pid;}
+    function beacon(r){try{return !!navigator.sendBeacon?.(base+"/"+r.kind,new Blob([JSON.stringify(r.body)],{type:"text/plain"}));}catch(_){return false;}}
+    async function flush(){
+      if(!allowed()||busy)return;busy=true;persist();
+      try{for(const r of queue.slice()){
+        if(!allowed())break;
+        try{const response=await fetch(base+"/"+r.kind,{method:"POST",body:JSON.stringify(r.body),headers:{"Content-Type":"text/plain"},keepalive:true,credentials:"omit"});
+          if(response.status===204){queue=queue.filter(q=>q.id!==r.id);persist();}else break;
+        }catch(_){break;}
+      }}catch(_){}finally{busy=false;}
+    }
+    function send(kind,body){try{if(!allowed())return;const id=uuid();if(!id)return;const r={id,at:Date.now(),kind,body};queue.push(r);persist();beacon(r);void flush();}catch(_){};}
+    function setEnabled(on){enabled=!!on;try{localStorage.setItem(OPT,String(enabled));}catch(_){}if(!enabled){queue=[];persist();}else void flush();}
+    function beginGame(game,language,start){
+      game.telemetry=null;if(!allowed()||!game.match)return;
+      const p=player(),id=game.match.telemetryId||uuid();if(!p||!id)return;game.match.telemetryId=id;
+      game.telemetry={schema_v:1,client:CLIENT,pid:p,match_id:id,game_index:game.match.games.length,level:game.level==="rookie"?"normal":game.level,best_of:game.match.bestOf,lang:language,home:game.home,
+        lineups:{you:game.you.map(s=>s.ref),ai:game.ai.map(s=>s.ref)},rounds:[],started:now()};
+      if(start){const {pid,match_id,level,best_of,lang,client}=game.telemetry;send("event",{type:"start",pid,match_id,level,best_of,lang,client});}
+    }
+    function round(game,yC,aC){
+      if(!game.telemetry)return null;
+      const hands=team=>team.map((s,idx)=>({s,idx})).filter(({s})=>s.alive).map(({s,idx})=>({idx,hand:cardsOf(s.mask)}));
+      return {you:hands(game.you),ai:hands(game.ai),you_cards:yC.slice(),ai_cards:aC.slice(),decision_ms:elapsed(game.roundStarted),tie:null,out:[],grade:"best"};
+    }
+    function resolved(game,r,tie,out,grade){if(!r||!game.telemetry)return;r.tie=tie;r.out=out.map(id=>[...YOU,...RIVAL].indexOf(id));r.grade=grade.replace("grade.","");game.telemetry.rounds.push(r);}
+    function finish(game){try{if(!allowed()||!game.telemetry||!game.boostPick)return;
+      const {started,...body}=game.telemetry;send("game",{...body,boosts:{you:{idx:game.boostPick.idx,card:game.boostPick.card},ai:{idx:game.aiBoost.idx,card:game.aiBoost.card}},won:game.won,quality:MM.quality(game),duration_ms:elapsed(started)});
+    }catch(_){};}
+    window.addEventListener?.("online",()=>{void flush();});
+    window.addEventListener?.("pagehide",()=>{if(allowed()){persist();queue.forEach(beacon);}});
+    return {get enabled(){return enabled;},setEnabled,beginGame,round,resolved,finish,flush,now};
+  })();
+  void telemetry.flush();
+  // ---------- end anonymous telemetry ----------
+
   // Retire the previous UI preference. Individual reels are always the pick controls.
   store.del("tonight-out:split");
   const reelInput = window.GameReels.bind($("#game"), {
@@ -3152,7 +3212,8 @@ if(typeof module!=='undefined')module.exports=api;else G.SingerAI=api;
     closeSheet(); sheetKind = kind; sheetSelection = selection;
     const title = kind === "interstitial" ? (lang === "zh" ? "本场" : "Match") : t(kind === "rules" ? "rules.button" : kind === "final" ? "mvp.review" : "ui.review");
     const content = kind === "rules" ? `<ol class="rules-c">${[1,2,3,4].map(n=>`<li>${t("rules."+n)}</li>`).join("")}</ol>
-      <div class="rules-tiers">${Object.values(LEVELS).map((l,i)=>`<p><b>${t(l.tierKey)} · ${t(l.nameKey)}</b><br>${t(["desc.rookie","desc.textbook","reader.desc"][i])}</p>`).join("")}</div>`
+      <div class="rules-tiers">${Object.values(LEVELS).map((l,i)=>`<p><b>${t(l.tierKey)} · ${t(l.nameKey)}</b><br>${t(["desc.rookie","desc.textbook","reader.desc"][i])}</p>`).join("")}</div>
+      <div class="logging"><span id="logging-label">${lang==="zh"?"匿名记录对局，用于改进 AI":"Games are logged anonymously to improve the AI"}</span><button type="button" role="switch" aria-labelledby="logging-label" aria-checked="${telemetry.enabled}" data-logging><i></i></button></div>`
       : kind === "interstitial" ? renderInterstitial() : kind === "final" ? renderOver(selection.gameIndex,selection.expandedGame) : renderInsight(reviewGame(selection.gameIndex),selection.roundIndex);
     sheet = document.createElement("div"); sheet.className = "sheet-back"; sheet.dataset.sheet = kind;
     sheet.innerHTML = `<section class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title"><div class="sheet-head"><h2 id="sheet-title">${title}</h2><button type="button" class="ghost" data-sheet-close>${t("ui.close")}</button></div><div class="sheet-body" tabindex="0">${kind==="round"&&selection.roundIndex!=null?`<button type="button" class="ghost review-back" data-review-back="${selection.gameIndex??""}">‹ ${t("mvp.review")}</button>`:""}${content}</div></section>`;
@@ -3269,6 +3330,7 @@ if(typeof module!=='undefined')module.exports=api;else G.SingerAI=api;
           daily: daily || null, dailyPractice: !!(daily && dailyState().results[daily]),
           pick: {}, aiCards: null, aiInfo: null,
           commit: null, lowIds: [], outId: null, cursorId: null, spin: false, result: null, log: [], winHist: [0.5] };
+    telemetry.beginGame(S,lang,true);
     showScreen(false);
     await startBoost();
     $("#you-lanes [role=spinbutton]")?.focus({preventScroll:true});
@@ -3281,11 +3343,13 @@ if(typeof module!=='undefined')module.exports=api;else G.SingerAI=api;
     // Keep the AI object and its learned profile, and replay exactly the same cast/pieces.
     ai.newGame();if(S.level==="reader")store.set(KEY_READER,ai.toJSON());
     S={...previous,home:!previous.won,boostReview:null,boostPick:null,match,recorded:false,round:0,phase:"pick",won:undefined,you:previous.you.map(s=>({...s,alive:true,mask:AI.FULL,boost:null,initial:null,shown:null})),ai:previous.ai.map(s=>({...s,alive:true,mask:AI.FULL,boost:null,initial:null,shown:null})),pick:{},commit:null,lowIds:[],outId:null,cursorId:null,spin:false,result:null,log:[],winHist:[.5]};
+    telemetry.beginGame(S,lang,false);
     await startBoost();$("#you-lanes [role=spinbutton]")?.focus({preventScroll:true});
   }
   function finishGame() {
     if(S.recorded)return;S.recorded=true;
     if(S.daily){if(!S.dailyPractice){const r=records();r[S.level]=r[S.level]||{w:0,l:0};r[S.level].best=Math.max(r[S.level].best||0,accuracy());store.set(KEY_REC,r);}recordDaily();return;}
+    telemetry.finish(S);
     saveGameQuality();if(MM.append(S.match,S)&&S.match.done)bumpMatchRecord();
   }
   function renderInterstitial() {
@@ -3340,7 +3404,7 @@ if(typeof module!=='undefined')module.exports=api;else G.SingerAI=api;
     const nonce = Math.floor(gameRng() * 36 ** 6).toString(36).padStart(6, "0");
     S.commit = { text: `R${S.round + 1}|${S.aiCards.join(",")}|${nonce}`, hash: null };
     S.roundCommit=S.commit;
-    S.phase = "pick";
+    S.phase = "pick"; S.roundStarted=telemetry.now();
     render();
     const round = S.round, h = await sha8(S.commit.text);
     if (S === game && S.round === round && S.commit) { S.commit.hash = h; renderLock(); }
@@ -3367,6 +3431,7 @@ if(typeof module!=='undefined')module.exports=api;else G.SingerAI=api;
     const yM = youAlive.map((s) => s.mask), aM = aiAlive.map((s) => s.mask);
     const yC = youAlive.map((s) => S.pick[s.id]), aC = S.aiCards;
 
+    const loggedRound=telemetry.round(S,yC,aC);
     const ideal = nash(yM, aM, S.home).slice(0, 3).map((d) => ({ cards: d.cards.slice(), p: d.p }));
 
     let read = null;
@@ -3412,6 +3477,7 @@ if(typeof module!=='undefined')module.exports=api;else G.SingerAI=api;
                  outId: out.id, mine: S.result.mine, gradeKey: S.result.gradeKey,
                  skill: an.skill, mind: an.mind, regret: an.regret, theoryLoss: an.theoryLoss, detail: JSON.parse(JSON.stringify(S.result)) });
 
+    telemetry.resolved(S,loggedRound,tied.length>1&&!tie.lastTie?{you:playerIdx==null?null:S.you.indexOf(youAlive[playerIdx]),ai:aiIdx==null?null:S.ai.indexOf(aiAlive[aiIdx])}:null,S.result.outIds,S.result.gradeKey);
     if (!alive(S.ai).length || !alive(S.you).length) {
       const won = alive(S.you).length > 0;
       S.phase = "over"; S.won = won;
@@ -3692,6 +3758,7 @@ if(typeof module!=='undefined')module.exports=api;else G.SingerAI=api;
   document.addEventListener("click", (ev) => {
     Sound.unlock();                                     // the first tap unlocks audio for later reveals
     const el = ev.target.closest("button"); if (!el || el.closest(".rp-back")) return;
+    if(el.hasAttribute("data-logging")){telemetry.setEnabled(!telemetry.enabled);el.setAttribute("aria-checked",String(telemetry.enabled));return;}
     if (el.hasAttribute("data-sound")) return Sound.toggle();
     if(el.dataset.series){bestOf=+el.dataset.series===5?5:3;store.set(KEY_SERIES,bestOf);renderSeriesChoice();return;}
     if(el.hasAttribute("data-next-game"))return nextGame();
